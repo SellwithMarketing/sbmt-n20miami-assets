@@ -1,0 +1,2883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<base target="_parent" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>N20 Miami — 13th Annual Neuroscience20 Summit · Brain, Spine and Mental Health</title>
+<meta name="description" content="The 13th Annual Neuroscience20 Summit. Brain, Spine and Mental Health. December 11–13, 2026, Miami, Florida. Hosted by the Society for Brain Mapping & Therapeutics, aligned with G20 Miami 2026." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    /* Brand palette — burgundy primary per updated brand direction */
+    --navy: #721f14;       /* alias kept for code-compat; resolves to burgundy */
+    --navy-deep: #4a1209;  /* alias kept; resolves to deep burgundy */
+    --burgundy: #721f14;
+    --burgundy-deep: #4a1209;
+    --gold: #ffde59;
+    --white: #ffffff;
+    --black: #000000;
+
+    /* Derived */
+    --navy-080: rgba(114, 31, 20, 0.80);
+    --navy-060: rgba(114, 31, 20, 0.60);
+    --gold-soft: rgba(255, 222, 89, 0.16);
+    --hairline: rgba(255, 255, 255, 0.14);
+    --hairline-strong: rgba(255, 255, 255, 0.28);
+    --ink-soft: rgba(255, 255, 255, 0.72);
+    --ink-darker: rgba(74, 18, 9, 0.78);
+    --rule: rgba(255, 222, 89, 0.45);
+
+    /* Layout widths */
+    --content-size: 800px;
+    --wide-size: 1280px;
+
+    /* Type */
+    --font-display: "Chakra Petch", sans-serif;
+    --font-body: "Montserrat", sans-serif;
+
+    /* Motion */
+    --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+
+  *,
+  *::before,
+  *::after { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--navy-deep);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    overflow-x: hidden;
+    touch-action: pan-y;
+  }
+
+  .wide-width {
+    max-width: var(--wide-size);
+    margin-inline: auto;
+    padding-inline: clamp(1rem, 4vw, 2.5rem);
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* Skip link for accessibility */
+  .skip-link {
+    position: absolute;
+    left: -10000px;
+    top: 0;
+    background: var(--gold);
+    color: var(--navy);
+    padding: 0.75rem 1rem;
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    z-index: 200;
+  }
+  .skip-link:focus { left: 1rem; top: 1rem; }
+
+  /* Universal focus ring */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+  }
+
+  /* ============== HEADER ============== */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: linear-gradient(180deg, rgba(74, 18, 9, 0.92) 0%, rgba(74, 18, 9, 0.78) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  .nav {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 2rem;
+    padding-block: 1.1rem;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .brand-seal {
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    color: var(--white);
+  }
+  .brand-mark {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    font-size: 0.95rem;
+    color: var(--white);
+  }
+  .brand-mark span {
+    color: var(--gold);
+    margin-left: 0.35rem;
+    font-weight: 500;
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 2.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-links a {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.78);
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 240ms var(--ease), transform 240ms var(--ease);
+  }
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 320ms var(--ease);
+  }
+  .nav-links a:hover {
+    color: var(--white);
+    transform: translateY(-1px);
+  }
+  .nav-links a:hover::after { transform: scaleX(1); }
+
+  .nav-cta {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding: 0.7rem 1.15rem;
+    border: 1px solid var(--gold);
+    background: transparent;
+    transition: background 300ms var(--ease), color 300ms var(--ease), transform 240ms var(--ease);
+  }
+  .nav-cta:hover {
+    background: var(--gold);
+    color: var(--navy);
+    transform: translateY(-1px);
+  }
+
+  /* Mobile nav handling — keep simple, hide center links, keep brand + cta */
+  @media (max-width: 880px) {
+    .nav-links { display: none; }
+    .nav { grid-template-columns: 1fr auto; }
+  }
+
+  /* ============== HERO ============== */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    isolation: isolate;
+    overflow: hidden;
+    background: var(--navy);
+    /* Respect iOS safe areas on notch/dynamic-island devices */
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  /* Miami aerial video — bottom-most background layer */
+  .hero-video {
+    position: absolute;
+    inset: 0;
+    z-index: -4;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    /* fade in once loaded */
+    opacity: 0;
+    transition: opacity 1.2s var(--ease);
+  }
+  .hero-video.is-ready { opacity: 1; }
+
+  /* Navy overlay over the video for type legibility + atmosphere */
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: -10%;
+    z-index: -3;
+    /* Lighter overlay — let the Miami video read clearly; vignette anchors text legibility */
+    background:
+      radial-gradient(70% 60% at 50% 50%, rgba(74, 18, 9, 0.0) 0%, rgba(74, 18, 9, 0.28) 65%, rgba(0, 0, 0, 0.72) 100%),
+      linear-gradient(180deg, rgba(114, 31, 20, 0.06) 0%, rgba(114, 31, 20, 0.18) 45%, rgba(74, 18, 9, 0.62) 100%);
+    animation: drift 24s var(--ease) infinite alternate;
+  }
+  @keyframes drift {
+    0%   { transform: translate3d(0, 0, 0) scale(1); }
+    100% { transform: translate3d(-2%, -1.5%, 0) scale(1.04); }
+  }
+
+  /* Neural connectivity SVG layer — subtle so the video can breathe */
+  .neural-layer {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    opacity: 0.06;
+    pointer-events: none;
+  }
+  .neural-layer svg { width: 100%; height: 100%; display: block; }
+
+  /* Bottom atmospheric anchor — video provides real Miami, this just anchors the CTAs */
+  .skyline {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 22vh;
+    min-height: 140px;
+    max-height: 220px;
+    z-index: -1;
+    pointer-events: none;
+    background:
+      linear-gradient(180deg, rgba(74, 18, 9, 0) 0%, rgba(74, 18, 9, 0.30) 50%, rgba(0, 0, 0, 0.55) 100%);
+  }
+  .skyline svg {
+    display: none; /* video shows the real skyline */
+  }
+  .skyline-horizon {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 30%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 222, 89, 0.35) 50%, transparent 100%);
+  }
+
+  /* Hero content stack */
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding-block: clamp(4rem, 12vh, 8rem) clamp(8rem, 22vh, 12rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  /* Text-shadow on hero type — protects legibility against the visible Miami video */
+  .hero-inner .kicker-block,
+  .hero-inner .wordmark,
+  .hero-inner .tagline,
+  .hero-inner .date-block,
+  .hero-inner .g20-line,
+  .hero-foot {
+    text-shadow:
+      0 2px 14px rgba(0, 0, 0, 0.55),
+      0 1px 3px rgba(0, 0, 0, 0.45);
+  }
+
+  /* Top seal — silent authority marker (official SBMT logo image) */
+  .hero-seal {
+    width: clamp(80px, 9vw, 120px);
+    height: auto;
+    color: var(--white);
+    opacity: 0;
+    animation: fadeUp 600ms var(--ease) forwards;
+    animation-delay: 0ms;
+    filter: drop-shadow(0 4px 18px rgba(0, 0, 0, 0.45));
+  }
+
+  /* Kicker rule + text */
+  .kicker-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9rem;
+    opacity: 0;
+    animation: fadeUp 600ms var(--ease) forwards;
+    animation-delay: 180ms;
+  }
+  .rule-gold {
+    width: 88px;
+    height: 1px;
+    background: var(--gold);
+    position: relative;
+    overflow: hidden;
+  }
+  .rule-gold::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.85) 50%, transparent 100%);
+    transform: translateX(-100%);
+    animation: pulseRule 6s var(--ease) infinite;
+  }
+  @keyframes pulseRule {
+    0%, 100% { transform: translateX(-110%); opacity: 0; }
+    50%      { transform: translateX(110%);  opacity: 1; }
+  }
+
+  .kicker {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 0.78rem;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.82);
+  }
+  .kicker .dot {
+    color: var(--gold);
+    margin: 0 0.5em;
+  }
+
+  /* Main wordmark */
+  .wordmark {
+    font-family: var(--font-display);
+    font-weight: 700;
+    /* Fluid: never below 2.1rem (fits 320px viewport - safe padding), grows with viewport, capped at desktop ceiling */
+    font-size: clamp(2.1rem, 11vw, 7.5rem);
+    line-height: 0.95;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    margin: 0;
+    max-width: 100%;
+    word-break: keep-all;
+    overflow-wrap: normal;
+    opacity: 0;
+    animation: fadeUp 600ms var(--ease) forwards;
+    animation-delay: 360ms;
+    text-shadow: 0 2px 60px rgba(0, 0, 0, 0.45);
+  }
+  .wordmark .twenty {
+    color: var(--gold);
+    margin-left: 0.18em;
+  }
+
+  /* Bracket tagline */
+  .tagline {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: clamp(0.85rem, 1.4vw, 1.05rem);
+    letter-spacing: 0.22em;
+    color: rgba(255, 255, 255, 0.92);
+    text-transform: uppercase;
+    margin: 0.25rem 0 0.5rem;
+    opacity: 0;
+    animation: fadeUp 600ms var(--ease) forwards;
+    animation-delay: 540ms;
+  }
+  .tagline .bracket { color: var(--gold); font-weight: 500; }
+
+  /* Date strip block */
+  .date-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9rem;
+    opacity: 0;
+    animation: fadeUp 600ms var(--ease) forwards;
+    animation-delay: 720ms;
+  }
+  .date-strip {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(0.92rem, 1.3vw, 1.1rem);
+    letter-spacing: 0.28em;
+    color: var(--white);
+    text-transform: uppercase;
+  }
+  .date-strip .sep {
+    color: var(--gold);
+    margin: 0 0.6em;
+  }
+
+  /* G20 alignment line */
+  .g20-line {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 0.78rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.62);
+    margin-top: 0.25rem;
+    opacity: 0;
+    animation: fadeUp 600ms var(--ease) forwards;
+    animation-delay: 900ms;
+  }
+  .g20-line::before,
+  .g20-line::after {
+    content: "—";
+    color: rgba(255, 222, 89, 0.7);
+    margin: 0 0.7em;
+  }
+
+  /* CTAs */
+  .cta-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1.75rem;
+    opacity: 0;
+    animation: fadeUp 600ms var(--ease) forwards;
+    animation-delay: 1080ms;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.82rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    padding: 1rem 1.6rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: transform 260ms var(--ease), background 260ms var(--ease), color 260ms var(--ease), border-color 260ms var(--ease);
+  }
+  .btn .arrow {
+    width: 14px;
+    height: 10px;
+    transition: transform 260ms var(--ease);
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--navy);
+    border-color: var(--gold);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    background: var(--white);
+    border-color: var(--white);
+  }
+  .btn-primary:hover .arrow { transform: translateX(4px); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--white);
+    border-color: rgba(255, 255, 255, 0.45);
+  }
+  .btn-secondary:hover {
+    transform: translateY(-2px);
+    border-color: var(--white);
+    background: rgba(255, 255, 255, 0.06);
+  }
+  .btn-secondary:hover .arrow { transform: translateX(4px); }
+
+  /* Meta footer of hero — credit + scroll cue */
+  .hero-foot {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 1.5rem;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: clamp(1rem, 4vw, 2.5rem);
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 0.7rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.55);
+    opacity: 0;
+    animation: fadeUp 800ms var(--ease) forwards;
+    animation-delay: 1320ms;
+  }
+  .hero-foot .org { display: inline-flex; align-items: center; gap: 0.6rem; }
+  .hero-foot .scroll-cue { display: inline-flex; align-items: center; gap: 0.6rem; }
+  .hero-foot .scroll-cue .line {
+    display: inline-block;
+    width: 28px;
+    height: 1px;
+    background: rgba(255, 222, 89, 0.6);
+  }
+
+  /* Animation keyframes */
+  @keyframes fadeUp {
+    0%   { opacity: 0; transform: translate3d(0, 18px, 0); }
+    100% { opacity: 1; transform: translate3d(0, 0, 0); }
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .hero::before,
+    .rule-gold::after { animation: none !important; }
+    .hero-video { display: none !important; }
+    .hero-seal,
+    .kicker-block,
+    .wordmark,
+    .tagline,
+    .date-block,
+    .g20-line,
+    .cta-row,
+    .hero-foot {
+      opacity: 1 !important;
+      animation: none !important;
+      transform: none !important;
+    }
+    .btn { transition: none; }
+    .nav-links a, .nav-cta { transition: none; }
+  }
+
+  /* Mobile: hide video to save bandwidth, rely on overlay + skyline + neural pattern */
+  @media (max-width: 768px) {
+    .hero-video { display: none; }
+  }
+
+  /* Smaller screens refinement */
+  @media (max-width: 600px) {
+    .hero-inner { gap: 1.1rem; padding-bottom: 7rem; }
+    .nav-cta { padding: 0.6rem 0.9rem; font-size: 0.72rem; }
+    .hero-foot {
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  /* ====================================================================
+     ============== SECTIONS 02 — 11  ·  NEW CSS ==========================
+     ==================================================================== */
+
+  /* ----- Shared section primitives ----- */
+  section.section-block {
+    position: relative;
+    padding-block: 96px;
+  }
+  section.section-block.section-pad-xl { padding-block: 120px; }
+
+  section.section-light {
+    background: var(--white);
+    color: var(--navy);
+  }
+  section.section-navy {
+    background: var(--navy);
+    color: var(--white);
+  }
+  section.section-burgundy {
+    background: var(--burgundy);
+    color: var(--white);
+  }
+
+  .eyebrow {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 0.72rem;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 1rem;
+    display: inline-block;
+  }
+  .section-light .eyebrow { color: #8a6b00; }
+
+  .section-h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(1.85rem, 3.4vw, 2.85rem);
+    line-height: 1.12;
+    letter-spacing: 0.005em;
+    margin: 0 0 1.5rem;
+  }
+  .section-light .section-h2 { color: var(--navy); }
+  .section-navy .section-h2, .section-burgundy .section-h2 { color: var(--white); }
+
+  .section-lead {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 1.02rem;
+    line-height: 1.7;
+    max-width: 64ch;
+    margin: 0 0 2.5rem;
+  }
+  .section-light .section-lead { color: var(--ink-darker); }
+  .section-navy .section-lead, .section-burgundy .section-lead { color: var(--ink-soft); }
+
+  /* Entrance reveal — stagger handled via data-reveal-index */
+  .reveal {
+    opacity: 0;
+    transform: translate3d(0, 22px, 0);
+    transition: opacity 700ms var(--ease), transform 700ms var(--ease);
+    transition-delay: calc(var(--reveal-delay, 0) * 1ms);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  }
+
+  /* ============ 02 · ABOUT N20 ============ */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 60fr 40fr;
+    gap: clamp(2rem, 6vw, 5rem);
+    align-items: start;
+  }
+  .about-body p {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 1.02rem;
+    line-height: 1.75;
+    color: var(--ink-darker);
+    margin: 0 0 1.2rem;
+  }
+  .about-body p:last-child {
+    font-weight: 500;
+    color: var(--navy);
+  }
+
+  .stat-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 1.25rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid rgba(114, 31, 20, 0.12);
+  }
+  .stat {
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--gold);
+  }
+  .stat-num {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(2.2rem, 4vw, 3.3rem);
+    line-height: 1;
+    color: var(--navy);
+    letter-spacing: 0.01em;
+  }
+  .stat-label {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(74, 18, 9, 0.62);
+    margin-top: 0.55rem;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 880px) {
+    .about-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ============ 03 · SUMMIT TOPICS ============ */
+  .topics-head { max-width: 60rem; margin-bottom: 3rem; }
+  .topics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+  .topic-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--hairline);
+    padding: 1.6rem 1.4rem 1.5rem;
+    transition: background 300ms var(--ease), border-color 300ms var(--ease), transform 300ms var(--ease);
+  }
+  .topic-card::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 0;
+    width: 36px;
+    height: 1px;
+    background: var(--gold);
+    transition: width 360ms var(--ease);
+  }
+  .topic-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: var(--hairline-strong);
+    transform: translateY(-2px);
+  }
+  .topic-card:hover::before { width: 100%; }
+  .topic-num {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 0.72rem;
+    letter-spacing: 0.32em;
+    color: var(--gold);
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.55rem;
+  }
+  .topic-name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.08rem;
+    line-height: 1.3;
+    color: var(--white);
+    margin: 0 0 0.45rem;
+    letter-spacing: 0.005em;
+  }
+  .topic-desc {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  @media (max-width: 1024px) { .topics-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px)  { .topics-grid { grid-template-columns: 1fr; } }
+
+  /* ============ 04 · WORLD MAP ============ */
+  .map-head { max-width: 60rem; margin-bottom: 2.5rem; }
+  .world-map-wrap {
+    position: relative;
+    margin: 1.5rem 0 3rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(114, 31, 20, 0.10);
+    background: #ffffff;
+  }
+  .world-map {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 2 / 1;
+    overflow: visible;
+  }
+  /* Continents */
+  .map-continent {
+    fill: rgba(114, 31, 20, 0.08);
+    stroke: rgba(114, 31, 20, 0.55);
+    stroke-width: 1;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+  }
+  /* Graticule */
+  .map-graticule {
+    stroke: rgba(114, 31, 20, 0.05);
+    stroke-width: 0.4;
+    stroke-dasharray: 2 4;
+    fill: none;
+  }
+  .map-equator {
+    stroke: rgba(114, 31, 20, 0.10);
+    stroke-width: 0.5;
+    stroke-dasharray: 3 3;
+    fill: none;
+  }
+  /* Pins — base */
+  .pin { cursor: pointer; outline: none; }
+  .pin .pin-tooltip {
+    opacity: 0;
+    transform: translateY(4px);
+    transform-box: fill-box;
+    transform-origin: center;
+    pointer-events: none;
+    transition: opacity 200ms var(--ease), transform 200ms var(--ease);
+  }
+  .pin:hover .pin-tooltip,
+  .pin:focus-visible .pin-tooltip {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .pin:focus-visible .pin-core { stroke: var(--gold); stroke-width: 1.5; }
+  /* Pin variants */
+  .pin--past .pin-core { fill: var(--burgundy); }
+  .pin--past .pin-halo { fill: none; stroke: var(--gold); stroke-width: 1; opacity: 0.6; }
+  .pin--virtual .pin-core { fill: var(--burgundy); }
+  .pin--virtual .pin-halo { fill: none; stroke: var(--gold); stroke-width: 1; stroke-dasharray: 2 2; opacity: 0.7; }
+  .pin--current .pin-core { fill: var(--gold); stroke: var(--white); stroke-width: 2; }
+  .pin--upcoming .pin-core {
+    fill: none;
+    stroke: rgba(114, 31, 20, 0.5);
+    stroke-width: 1;
+    stroke-dasharray: 2 2;
+  }
+  /* Miami label (always visible) */
+  .miami-label {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 7px;
+    letter-spacing: 1.6px;
+    fill: var(--burgundy);
+  }
+  /* Pulse ring for Miami */
+  .pulse-ring {
+    fill: none;
+    stroke: var(--gold);
+    stroke-width: 1.4;
+    opacity: 0;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: miamiPulse 3s var(--ease) infinite;
+  }
+  @keyframes miamiPulse {
+    0%   { r: 10; opacity: 0.8; }
+    100% { r: 26; opacity: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .pulse-ring {
+      animation: none !important;
+      opacity: 0.4;
+      r: 14;
+    }
+    .pin .pin-tooltip { transition: none; }
+  }
+
+  .summits-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .summit-item {
+    padding: 0.9rem 1rem;
+    border-top: 1px solid rgba(114, 31, 20, 0.10);
+    color: var(--ink-darker);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  .summit-item .s-num {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 0.72rem;
+    letter-spacing: 0.28em;
+    color: rgba(74, 18, 9, 0.55);
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+  .summit-item .s-city {
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--navy);
+    font-size: 0.98rem;
+    letter-spacing: 0.01em;
+  }
+  .summit-item .s-meta {
+    color: rgba(74, 18, 9, 0.7);
+    font-size: 0.85rem;
+    margin-top: 0.15rem;
+    display: block;
+  }
+  .summit-item.is-current .s-city {
+    color: #8a6b00;
+  }
+  .summit-item.is-current { border-top-color: var(--gold); }
+  .summit-item.is-upcoming { opacity: 0.6; }
+  .summit-item .s-tag {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 0.62rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--burgundy);
+    margin-top: 0.35rem;
+  }
+  .summit-item.is-current .s-tag { color: #8a6b00; }
+
+  @media (max-width: 1024px) { .summits-list { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 768px)  { .summits-list { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 480px)  { .summits-list { grid-template-columns: 1fr; } }
+
+  /* ============ 06 · WHY PARTNER ============ */
+  .pillars-head { max-width: 60rem; margin-bottom: 3rem; }
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  .pillar-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid rgba(114, 31, 20, 0.10);
+  }
+  .pillar-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: var(--gold);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 64px;
+  }
+  .pillar-icon svg { width: 28px; height: 28px; }
+  .pillar-name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.18rem;
+    color: var(--navy);
+    margin: 0 0 0.6rem;
+    letter-spacing: 0.005em;
+  }
+  .pillar-desc {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--ink-darker);
+    margin: 0;
+  }
+
+  @media (max-width: 880px) {
+    .pillars-grid { grid-template-columns: 1fr; gap: 0.5rem; }
+  }
+  @media (max-width: 600px) {
+    .pillar-card { grid-template-columns: 1fr; gap: 1rem; }
+  }
+
+  /* ============ 07 · PARTNERSHIP TIERS ============ */
+  .tiers-head { max-width: 60rem; margin-bottom: 3rem; }
+  .tiers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+  .tier-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--hairline);
+    padding: 1.8rem 1.6rem 1.6rem;
+    display: flex;
+    flex-direction: column;
+    transition: background 300ms var(--ease), border-color 300ms var(--ease), transform 300ms var(--ease);
+  }
+  .tier-card:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: var(--hairline-strong);
+    transform: translateY(-3px);
+  }
+  .tier-card.is-prestige { border: 1.5px solid var(--gold); background: rgba(255, 222, 89, 0.04); }
+  .tier-card.is-prestige:hover { background: rgba(255, 222, 89, 0.08); }
+  .tier-card.is-featured { overflow: hidden; }
+  .tier-card.is-featured::after {
+    content: "Featured";
+    position: absolute;
+    top: 14px;
+    right: 0;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.62rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--navy);
+    background: var(--gold);
+    padding: 0.35rem 0.85rem 0.35rem 0.85rem;
+    clip-path: polygon(8px 0, 100% 0, 100% 100%, 8px 100%, 0 50%);
+  }
+
+  .tier-label {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 0.68rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .tier-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.18rem;
+    line-height: 1.25;
+    color: var(--white);
+    margin: 0 0 0.85rem;
+    letter-spacing: 0.005em;
+  }
+  .tier-price {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 2.1rem;
+    line-height: 1;
+    color: var(--gold);
+    letter-spacing: 0.005em;
+    margin-bottom: 1rem;
+  }
+  .tier-price small {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    color: var(--ink-soft);
+    margin-left: 0.4rem;
+    text-transform: uppercase;
+  }
+  .tier-divider {
+    height: 1px;
+    background: rgba(255, 222, 89, 0.4);
+    margin: 0 0 1.1rem;
+  }
+  .tier-benefits {
+    list-style: none;
+    margin: 0 0 1.3rem;
+    padding: 0;
+    flex: 1;
+  }
+  .tier-benefits li {
+    position: relative;
+    padding: 0.45rem 0 0.45rem 1rem;
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  .tier-benefits li:last-child { border-bottom: none; }
+  .tier-benefits li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.95em;
+    width: 5px;
+    height: 5px;
+    background: var(--gold);
+    border-radius: 50%;
+  }
+
+  .tier-cta {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.74rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding-top: 0.4rem;
+    border-top: 1px solid var(--hairline);
+    transition: color 240ms var(--ease), letter-spacing 240ms var(--ease);
+    align-self: flex-start;
+    margin-top: auto;
+  }
+  .tier-cta:hover { color: var(--white); letter-spacing: 0.26em; }
+  .tier-cta .arr { margin-left: 0.5rem; }
+
+  .tiers-terms {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--hairline);
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    max-width: 80ch;
+  }
+
+  @media (max-width: 1024px) { .tiers-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px)  { .tiers-grid { grid-template-columns: 1fr; } }
+
+  /* ============ 08 · STRATEGIC PARTNER ============ */
+  .partner-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2rem, 6vw, 5rem);
+    align-items: center;
+  }
+  .partner-left .section-h2 { max-width: 18ch; }
+  .partner-body {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.88);
+    margin: 0 0 2rem;
+    max-width: 50ch;
+  }
+  .founder-card {
+    background: var(--white);
+    color: var(--navy);
+    padding: 2.4rem 2rem;
+    border: 1px solid var(--gold);
+    text-align: center;
+    position: relative;
+  }
+  .founder-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin: 0 auto 1.4rem;
+    border: 2px solid var(--gold);
+    overflow: hidden;
+    background: var(--burgundy-deep);
+  }
+  .founder-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .founder-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--navy);
+    margin: 0 0 0.35rem;
+    letter-spacing: 0.04em;
+  }
+  .founder-title {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.85rem;
+    line-height: 1.55;
+    color: rgba(74, 18, 9, 0.72);
+    margin: 0 0 1.3rem;
+  }
+  .founder-contact {
+    border-top: 1px solid rgba(114, 31, 20, 0.12);
+    padding-top: 1.1rem;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 0.88rem;
+    color: var(--navy);
+    line-height: 1.7;
+  }
+  .founder-contact a:hover { color: var(--burgundy); }
+
+  @media (max-width: 880px) {
+    .partner-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ============ 09 · INQUIRY FORM ============ */
+  .form-head { text-align: center; margin: 0 auto 3rem; max-width: 60rem; }
+  .form-head .section-lead { margin-inline: auto; }
+  .inquiry-form {
+    max-width: 720px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem 1.25rem;
+  }
+  .field { display: flex; flex-direction: column; }
+  .field-full { grid-column: 1 / -1; }
+  .field label {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 0.74rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 0.55rem;
+  }
+  .field label .req {
+    color: var(--gold);
+    margin-left: 0.25rem;
+    font-weight: 700;
+  }
+  .field input,
+  .field select,
+  .field textarea {
+    font-family: var(--font-body);
+    font-weight: 400;
+    /* 16px floor on inputs prevents iOS auto-zoom on focus */
+    font-size: 1rem;
+    color: var(--navy);
+    background: var(--white);
+    border: 1px solid var(--navy);
+    padding: 12px 14px;
+    min-height: 48px;
+    transition: border-color 240ms var(--ease), box-shadow 240ms var(--ease);
+    width: 100%;
+  }
+  .field select { appearance: none; -webkit-appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--navy) 50%), linear-gradient(135deg, var(--navy) 50%, transparent 50%); background-position: calc(100% - 18px) 50%, calc(100% - 13px) 50%; background-size: 5px 5px, 5px 5px; background-repeat: no-repeat; padding-right: 32px; }
+  .field textarea { resize: vertical; min-height: 120px; }
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 2px var(--gold);
+  }
+  .field-error {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: var(--burgundy);
+    margin-top: 0.35rem;
+    min-height: 0;
+  }
+  .privacy-row {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding-top: 0.5rem;
+    min-height: 44px;
+  }
+  .privacy-row input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    margin-top: 2px;
+    accent-color: var(--navy);
+    flex: 0 0 22px;
+    cursor: pointer;
+  }
+  .privacy-row label {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--ink-darker);
+    margin: 0;
+    padding: 0.25rem 0;
+    letter-spacing: 0;
+    text-transform: none;
+    cursor: pointer;
+  }
+  .privacy-row a {
+    color: var(--burgundy);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .submit-row {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 600px) {
+    .inquiry-form { grid-template-columns: 1fr; }
+  }
+
+  /* ============ 10 · SAVE THE DATE ============ */
+  .savedate {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+  .savedate-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .savedate-pattern svg { width: 100%; height: 100%; display: block; }
+  .savedate-inner {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .savedate-eyebrow {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 0.82rem;
+    letter-spacing: 0.42em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+  }
+  .savedate-date {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(5rem, 14vw, 10rem);
+    line-height: 0.92;
+    color: var(--white);
+    letter-spacing: 0.005em;
+    margin: 0;
+    text-shadow: 0 4px 60px rgba(0, 0, 0, 0.4);
+  }
+  .savedate-year {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--gold);
+    letter-spacing: 0.04em;
+    margin: 0.25rem 0 0.4rem;
+  }
+  .savedate-location {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin: 0 0 2rem;
+  }
+  .savedate-location .sep { color: var(--gold); margin: 0 0.55em; }
+  .savedate-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  /* ============ 11 · FOOTER ============ */
+  .site-footer {
+    background: #0a0a14;
+    color: var(--ink-soft);
+    padding-block: 80px 40px;
+    border-top: 1px solid var(--hairline);
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+  }
+  .footer-col h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 0.72rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 1.4rem;
+  }
+  .footer-org-head {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.2rem;
+  }
+  .footer-seal {
+    width: 36px;
+    height: 36px;
+    color: var(--white);
+    flex: 0 0 36px;
+  }
+  .footer-org-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.14em;
+    color: var(--white);
+  }
+  .footer-org-addr {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .footer-org-addr strong {
+    color: var(--white);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 0.35rem;
+  }
+  .footer-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .footer-list li { margin-bottom: 0.7rem; }
+  .footer-list a {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: var(--ink-soft);
+    transition: color 240ms var(--ease);
+  }
+  .footer-list a:hover { color: var(--white); }
+  .footer-bottom {
+    border-top: 1px solid var(--hairline);
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .footer-copy {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 0.82rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 0;
+  }
+  .footer-social {
+    display: flex;
+    gap: 0.85rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .footer-social a {
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--hairline);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink-soft);
+    transition: color 240ms var(--ease), border-color 240ms var(--ease);
+  }
+  .footer-social a:hover {
+    color: var(--gold);
+    border-color: var(--gold);
+  }
+  .footer-social svg { width: 16px; height: 16px; }
+
+  @media (max-width: 1024px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  }
+  @media (max-width: 600px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; }
+  }
+
+  /* ====== Tablet/mobile padding tightening for big sections ====== */
+  @media (max-width: 768px) {
+    section.section-block { padding-block: 72px; }
+    section.section-block.section-pad-xl { padding-block: 88px; }
+  }
+
+  /* ========================================================================
+     ============== RESPONSIVE OVERHAUL · v1 (2026-05-22) ===================
+     Surgical patches per breakpoint. Desktop aesthetic untouched.
+     ========================================================================
+  */
+
+  /* ---------- Tablet upper bound (1024px) — grid reflow ---------- */
+  @media (max-width: 1024px) {
+    /* Pillars: keep 2x2 here — comfortably readable */
+    .pillars-grid { gap: 1.5rem; }
+    /* Partner grid stays 50/50 until <880 */
+  }
+
+  /* ---------- Tablet (≤880px) — stacks ---------- */
+  @media (max-width: 880px) {
+    .partner-left .section-h2 { max-width: none; }
+    .founder-card { max-width: 480px; margin-inline: auto; }
+  }
+
+  /* ---------- Mobile large + tablet portrait (≤768px) ---------- */
+  @media (max-width: 768px) {
+    /* World map: hide entirely on mobile; the chronological list below
+       carries the same information with full legibility. SVG pin radius
+       and 6pt tooltip text are unusable below this width. */
+    .world-map-wrap { display: none; }
+
+    /* Stat strip: tighter and 2x2 still works at this breakpoint */
+    .stat-strip { gap: 1.25rem 1rem; }
+    .stat-num { font-size: clamp(2rem, 6vw, 2.6rem); }
+
+    /* Hero CTAs: stack and go full width with safe touch height */
+    .cta-row { flex-direction: column; width: 100%; max-width: 360px; gap: 0.85rem; }
+    .cta-row .btn { width: 100%; justify-content: center; min-height: 48px; padding: 0.95rem 1.25rem; }
+
+    /* Date strip: allow wrap on narrow */
+    .date-strip { display: inline-block; line-height: 1.6; }
+
+    /* Tier price: scale down so it doesn't dominate the card */
+    .tier-price { font-size: 1.75rem; }
+    .tier-card { padding: 1.5rem 1.3rem 1.4rem; }
+    .tier-benefits li { font-size: 0.95rem; padding: 0.5rem 0 0.5rem 1rem; }
+    .tier-cta { padding: 0.75rem 0; min-height: 44px; display: inline-flex; align-items: center; }
+
+    /* Save-the-date layout */
+    .savedate-cta { flex-direction: column; width: 100%; max-width: 360px; margin-inline: auto; gap: 0.85rem; }
+    .savedate-cta .btn { width: 100%; justify-content: center; min-height: 48px; }
+  }
+
+  /* ---------- Mobile (≤640px) ---------- */
+  @media (max-width: 640px) {
+    /* Section padding tighter on small phones */
+    section.section-block { padding-block: 60px; }
+    section.section-block.section-pad-xl { padding-block: 72px; }
+
+    /* Stat strip: keep 2x2 (numbers stay legible) */
+    .stat-strip { grid-template-columns: 1fr 1fr; gap: 1rem 0.85rem; }
+    .stat { padding-top: 1rem; }
+
+    /* Topic cards: inner padding readable */
+    .topic-card { padding: 1.4rem 1.2rem 1.3rem; }
+    .topic-name { font-size: 1.05rem; }
+
+    /* Hero seal scales with viewport */
+    .hero-seal { width: clamp(64px, 18vw, 100px); }
+
+    /* Date strip line break on narrow */
+    .date-strip { font-size: 0.85rem; letter-spacing: 0.22em; }
+
+    /* Tier card list font protection */
+    .tier-benefits li { font-size: 0.9rem; }
+
+    /* Founder card */
+    .founder-card { padding: 2rem 1.5rem; }
+
+    /* Footer bottom stacks centered */
+    .footer-bottom { justify-content: center; text-align: center; }
+    .footer-copy { text-align: center; width: 100%; }
+    .footer-social { justify-content: center; width: 100%; }
+  }
+
+  /* ---------- Mobile small (≤380px) — old/small devices ---------- */
+  @media (max-width: 380px) {
+    /* Even tighter hero */
+    .hero-inner { gap: 0.95rem; padding-block: clamp(3rem, 8vh, 5rem) clamp(6rem, 16vh, 8rem); }
+    .kicker { font-size: 0.68rem; letter-spacing: 0.32em; }
+    .tagline { font-size: 0.78rem; letter-spacing: 0.18em; }
+    .date-strip { font-size: 0.78rem; letter-spacing: 0.18em; }
+    .g20-line { font-size: 0.68rem; letter-spacing: 0.24em; }
+
+    /* Save-the-date: don't overflow */
+    .savedate-date { font-size: clamp(3.5rem, 18vw, 5rem); letter-spacing: 0; }
+    .savedate-location { font-size: 0.8rem; letter-spacing: 0.22em; }
+
+    /* Founder photo smaller */
+    .founder-photo { width: 140px; height: 140px; }
+
+    /* Topic / tier card padding */
+    .topic-card { padding: 1.2rem 1rem 1.1rem; }
+    .tier-card { padding: 1.3rem 1.1rem 1.2rem; }
+    .tier-price { font-size: 1.55rem; }
+
+    /* Stat numbers don't shrink below readable */
+    .stat-num { font-size: 2rem; }
+    .stat-label { font-size: 0.66rem; letter-spacing: 0.18em; }
+
+    /* Nav CTA pill */
+    .nav-cta { padding: 0.55rem 0.75rem; font-size: 0.66rem; letter-spacing: 0.14em; }
+
+    /* Hero foot strip: shorter content + stack on narrow screens to prevent overlap */
+    .hero-foot {
+      font-size: 0.56rem;
+      letter-spacing: 0.18em;
+      padding-inline: 1rem;
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: center;
+      text-align: center;
+    }
+    .hero-foot .scroll-cue .line { width: 18px; }
+  }
+
+  /* ---------- Landscape mobile (height-constrained) ---------- */
+  @media (max-height: 480px) and (orientation: landscape) {
+    /* Hero with very short viewport: relax min-height, tighten padding */
+    .hero { min-height: auto; padding-block: 4rem 5rem; }
+    .hero-inner { gap: 0.9rem; padding-block: 2rem 4rem; }
+    .wordmark { font-size: clamp(2rem, 7vw, 3.5rem); }
+    .hero-seal { width: 56px; }
+    .hero-foot { bottom: 0.75rem; }
+  }
+
+  /* ---------- iOS safe-area / notch handling ---------- */
+  @supports (padding: max(0px)) {
+    .hero-foot {
+      padding-left: max(clamp(1rem, 4vw, 2.5rem), env(safe-area-inset-left));
+      padding-right: max(clamp(1rem, 4vw, 2.5rem), env(safe-area-inset-right));
+      bottom: max(1.5rem, env(safe-area-inset-bottom));
+    }
+  }
+
+  /* ---------- Hover-only interaction fallback for touch devices ---------- */
+  @media (hover: none) {
+    /* Pin tooltips also reveal on tap via :focus-visible (tabindex=0) */
+    .pin:focus .pin-tooltip { opacity: 1; transform: translateY(0); }
+    .topic-card:active { background: rgba(255, 255, 255, 0.06); border-color: var(--hairline-strong); }
+    .tier-card:active { background: rgba(255, 255, 255, 0.07); border-color: var(--hairline-strong); }
+  }
+
+  /* =================================================================
+     ELEMENTOR CONTAINER BREAK-OUT
+     The page is rendered inside Elementor's section/container structure
+     (Hello Elementor + Elementor Pro + Elementor Full Width template).
+     By default the container has horizontal padding (~24-30px) and a
+     max-width. Our hero needs to escape that to be true viewport-wide.
+     ================================================================= */
+  .page-id-19610 .elementor-section,
+  .page-id-19610 .elementor-section.elementor-section-boxed,
+  .page-id-19610 .elementor-section.elementor-section-boxed > .elementor-container,
+  .page-id-19610 .elementor-container,
+  .page-id-19610 .elementor-row,
+  .page-id-19610 .elementor-column,
+  .page-id-19610 .elementor-column-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .page-id-19610 .elementor-widget,
+  .page-id-19610 .elementor-widget-html,
+  .page-id-19610 .elementor-widget-container,
+  .page-id-19610 .elementor-element {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Prevent any inherited horizontal overflow */
+  .page-id-19610,
+  .page-id-19610 body {
+    overflow-x: hidden !important;
+  }
+
+  /* Our top-level sections take the full viewport width */
+  .page-id-19610 .hero,
+  .page-id-19610 .section-block,
+  .page-id-19610 .site-footer-block {
+    width: 100% !important;
+    max-width: 100vw !important;
+    box-sizing: border-box;
+  }
+
+  /* Restore the .wide-width inner padding ONLY inside our sections */
+  .page-id-19610 .hero .wide-width,
+  .page-id-19610 .section-block .wide-width,
+  .page-id-19610 .site-footer-block .wide-width {
+    padding-inline: clamp(1rem, 4vw, 2.5rem) !important;
+    margin-inline: auto;
+    max-width: var(--wide-size, 1280px);
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Belt-and-suspenders: prevent the hero from being constrained on mobile */
+  @media (max-width: 1024px) {
+    .page-id-19610 .hero-inner { padding-inline: 1rem !important; }
+    .page-id-19610 .wordmark { word-break: keep-all; max-width: 100%; overflow: visible; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- Custom header removed — site header from worldbrainmapping.org is provided by the theme on Elementor Full Width template -->
+
+<main id="main">
+
+<!-- ============== HERO ============== -->
+<section class="hero" aria-labelledby="hero-wordmark">
+
+  <!-- Miami aerial video background -->
+  <video
+    class="hero-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="auto"
+    aria-hidden="true"
+    onloadeddata="this.classList.add('is-ready')">
+    <source src="https://www.worldbrainmapping.org/wp-content/uploads/2026/05/miami-florida-circa-2019-aerial-view-of-miami-at-2026-01-22-12-49-25-utc.webm" type="video/webm">
+  </video>
+
+  <!-- Neural connectivity etched pattern -->
+  <div class="neural-layer" aria-hidden="true">
+    <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <radialGradient id="nodeGold" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#ffde59" stop-opacity="0.9" />
+          <stop offset="100%" stop-color="#ffde59" stop-opacity="0" />
+        </radialGradient>
+      </defs>
+      <g stroke="#ffffff" stroke-width="0.6" fill="none" opacity="0.6">
+        <path d="M120 220 C 260 140, 380 320, 520 220 S 760 120, 900 240" />
+        <path d="M180 380 C 320 300, 440 480, 600 400 S 820 320, 980 420" />
+        <path d="M240 540 C 380 460, 520 620, 680 560 S 900 480, 1060 580" />
+        <path d="M300 700 C 460 620, 600 780, 760 700 S 980 620, 1140 720" />
+        <path d="M1180 180 C 1320 260, 1420 140, 1540 220" />
+        <path d="M1100 360 C 1260 440, 1380 320, 1540 400" />
+        <path d="M1040 540 C 1200 620, 1340 500, 1500 580" />
+        <path d="M980 720 C 1140 800, 1280 680, 1500 760" />
+        <path d="M520 120 L 560 260 L 700 220 L 760 360 L 880 320" />
+        <path d="M340 200 L 380 360 L 520 320 L 600 460 L 740 420" />
+        <path d="M180 480 L 220 620 L 360 580 L 440 700 L 580 660" />
+      </g>
+      <g fill="url(#nodeGold)">
+        <circle cx="120"  cy="220" r="3.2" />
+        <circle cx="520"  cy="220" r="3.2" />
+        <circle cx="900"  cy="240" r="3.2" />
+        <circle cx="180"  cy="380" r="3.2" />
+        <circle cx="600"  cy="400" r="3.2" />
+        <circle cx="980"  cy="420" r="3.2" />
+        <circle cx="240"  cy="540" r="3.2" />
+        <circle cx="680"  cy="560" r="3.2" />
+        <circle cx="1060" cy="580" r="3.2" />
+        <circle cx="300"  cy="700" r="3.2" />
+        <circle cx="760"  cy="700" r="3.2" />
+        <circle cx="1140" cy="720" r="3.2" />
+        <circle cx="1180" cy="180" r="3.2" />
+        <circle cx="1540" cy="220" r="3.2" />
+        <circle cx="1100" cy="360" r="3.2" />
+        <circle cx="1540" cy="400" r="3.2" />
+        <circle cx="1040" cy="540" r="3.2" />
+        <circle cx="1500" cy="580" r="3.2" />
+        <circle cx="380"  cy="360" r="3.2" />
+        <circle cx="740"  cy="420" r="3.2" />
+        <circle cx="360"  cy="580" r="3.2" />
+        <circle cx="580"  cy="660" r="3.2" />
+      </g>
+    </svg>
+  </div>
+
+  <!-- Stacked content -->
+  <div class="wide-width hero-inner">
+    <!-- SBMT official logo -->
+    <img class="hero-seal" src="https://www.worldbrainmapping.org/wp-content/uploads/2025/01/logo-6.png" alt="Society for Brain Mapping and Therapeutics" width="160" height="160" loading="eager" decoding="async" />
+
+    <div class="kicker-block">
+      <span class="rule-gold" aria-hidden="true"></span>
+      <span class="kicker">13<sup style="font-size:.6em;letter-spacing:.05em;">TH</sup> ANNUAL <span class="dot">·</span> N20 SUMMIT</span>
+    </div>
+
+    <h1 id="hero-wordmark" class="wordmark">
+      NEUROSCIENCE<span class="twenty">20</span>
+    </h1>
+
+    <p class="tagline">
+      <span class="bracket">[</span>&nbsp;Brain, Spine and Mental Health&nbsp;<span class="bracket">]</span>
+    </p>
+
+    <div class="date-block">
+      <span class="rule-gold" aria-hidden="true"></span>
+      <span class="date-strip">
+        Dec 11&ndash;13, 2026 <span class="sep">·</span> Miami, Florida <span class="sep">·</span> USA
+      </span>
+      <span class="g20-line">Aligned with G20 Miami 2026</span>
+    </div>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://www.worldbrainmapping.org/wp-content/uploads/2026/05/N20-Miami-Event-Prospectus.pdf" download>
+        Download the prospectus
+        <svg class="arrow" viewBox="0 0 14 14" aria-hidden="true">
+          <path d="M7 1v9M3 7l4 4 4-4M1 13h12" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="square" stroke-linejoin="miter" />
+        </svg>
+      </a>
+      <a class="btn btn-secondary" href="https://rmezpwdpuaktuyq.eventify.io/t2/tickets/9DAA53,C60015,3A845F,9296CD,F75870" target="_blank" rel="noopener">
+        Become a Sponsor
+        <svg class="arrow" viewBox="0 0 14 10" aria-hidden="true">
+          <path d="M0 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="square" />
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-foot" aria-hidden="false">
+    <span class="org">Hosted by SBMT <span style="color:var(--gold);">·</span> worldbrainmapping.org</span>
+    <span class="scroll-cue">Scroll <span class="line"></span></span>
+  </div>
+
+  <div class="skyline" aria-hidden="true">
+    <span class="skyline-horizon"></span>
+    <svg viewBox="0 0 1600 280" preserveAspectRatio="xMidYMax slice">
+      <defs>
+        <linearGradient id="bldgFade" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="currentColor" stop-opacity="0.18" />
+          <stop offset="100%" stop-color="currentColor" stop-opacity="0.85" />
+        </linearGradient>
+        <linearGradient id="bldgFront" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#721f14" stop-opacity="0.0" />
+          <stop offset="60%" stop-color="#000a2a" stop-opacity="0.7" />
+          <stop offset="100%" stop-color="#000a2a" stop-opacity="1" />
+        </linearGradient>
+      </defs>
+      <g fill="url(#bldgFade)">
+        <polygon points="0,280 0,220 40,220 40,200 70,200 70,210 110,210 110,180 140,180 140,200 180,200 180,170 215,170 215,195 245,195 245,160 280,160 280,185 320,185 320,150 360,150 360,180 400,180 400,165 440,165 440,140 475,140 475,170 510,170 510,150 545,150 545,175 580,175 580,135 620,135 620,170 655,170 655,150 690,150 690,180 725,180 725,160 760,160 760,140 800,140 800,170 835,170 835,145 870,145 870,175 905,175 905,160 940,160 940,135 975,135 975,165 1010,165 1010,180 1045,180 1045,150 1080,150 1080,170 1120,170 1120,140 1160,140 1160,165 1200,165 1200,185 1240,185 1240,160 1280,160 1280,195 1320,195 1320,170 1360,170 1360,150 1400,150 1400,180 1440,180 1440,200 1480,200 1480,165 1520,165 1520,200 1560,200 1560,220 1600,220 1600,280" />
+      </g>
+      <g fill="url(#bldgFront)">
+        <polygon points="0,280 0,260 60,260 60,230 100,230 100,250 150,250 150,210 200,210 200,240 260,240 260,200 320,200 320,225 380,225 380,190 440,190 440,220 500,220 500,180 560,180 560,215 620,215 620,195 680,195 680,170 740,170 740,205 800,205 800,180 870,180 870,210 940,210 940,175 1010,175 1010,215 1080,215 1080,195 1140,195 1140,170 1200,170 1200,205 1260,205 1260,190 1320,190 1320,220 1380,220 1380,195 1440,195 1440,235 1500,235 1500,210 1560,210 1560,250 1600,250 1600,280" />
+      </g>
+      <g fill="#ffde59" opacity="0.45">
+        <rect x="78"  y="245" width="2" height="2" />
+        <rect x="170" y="220" width="2" height="2" />
+        <rect x="278" y="210" width="2" height="2" />
+        <rect x="412" y="205" width="2" height="2" />
+        <rect x="520" y="195" width="2" height="2" />
+        <rect x="640" y="208" width="2" height="2" />
+        <rect x="760" y="190" width="2" height="2" />
+        <rect x="892" y="220" width="2" height="2" />
+        <rect x="1024" y="200" width="2" height="2" />
+        <rect x="1158" y="180" width="2" height="2" />
+        <rect x="1284" y="200" width="2" height="2" />
+        <rect x="1404" y="205" width="2" height="2" />
+        <rect x="1518" y="220" width="2" height="2" />
+      </g>
+      <g fill="#000a2a" stroke="#000a2a">
+        <g transform="translate(60,280)">
+          <rect x="-1.2" y="-90" width="2.4" height="90" />
+          <path d="M0 -90 C -20 -100, -40 -98, -60 -82 C -42 -92, -22 -94, 0 -86 Z" fill="#000a2a" />
+          <path d="M0 -90 C 20 -100, 40 -98, 60 -82 C 42 -92, 22 -94, 0 -86 Z" fill="#000a2a" />
+          <path d="M0 -92 C -12 -114, -32 -120, -50 -116 C -32 -110, -16 -104, 0 -90 Z" fill="#000a2a" />
+          <path d="M0 -92 C 12 -114, 32 -120, 50 -116 C 32 -110, 16 -104, 0 -90 Z" fill="#000a2a" />
+          <path d="M0 -94 C -4 -120, -6 -130, 0 -136 C 6 -130, 4 -120, 0 -94 Z" fill="#000a2a" />
+        </g>
+        <g transform="translate(1540,280)">
+          <rect x="-1.2" y="-78" width="2.4" height="78" />
+          <path d="M0 -78 C -18 -88, -36 -86, -54 -72 C -38 -82, -20 -84, 0 -76 Z" fill="#000a2a" />
+          <path d="M0 -78 C 18 -88, 36 -86, 54 -72 C 38 -82, 20 -84, 0 -76 Z" fill="#000a2a" />
+          <path d="M0 -80 C -10 -100, -28 -104, -44 -100 C -28 -96, -14 -92, 0 -80 Z" fill="#000a2a" />
+          <path d="M0 -80 C 10 -100, 28 -104, 44 -100 C 28 -96, 14 -92, 0 -80 Z" fill="#000a2a" />
+          <path d="M0 -82 C -3 -104, -5 -114, 0 -118 C 5 -114, 3 -104, 0 -82 Z" fill="#000a2a" />
+        </g>
+      </g>
+    </svg>
+  </div>
+
+</section>
+
+<!-- ============== 02 · ABOUT N20 ============== -->
+<section id="about" class="section-block section-light" aria-labelledby="about-h2">
+  <div class="wide-width">
+    <div class="about-grid">
+      <div class="about-left">
+        <span class="eyebrow reveal" style="--reveal-delay:0;">ABOUT</span>
+        <h2 id="about-h2" class="section-h2 reveal" style="--reveal-delay:100;">About the Neuroscience20 Summit</h2>
+        <div class="about-body">
+          <p class="reveal" style="--reveal-delay:200;">Neuroscience20 (N20) is the global policy summit convening leaders in brain, spine, and mental health across G20 nations. Launched in 2014 by the Society for Brain Mapping &amp; Therapeutics, N20 aligns with the United States&rsquo; BRAIN Initiative and ongoing mental health policy agenda to accelerate the translation of neurotechnology into clinical practice.</p>
+          <p class="reveal" style="--reveal-delay:300;">The summit brings together policymakers, scientists, engineers, physicians, surgeons, universities, investors, and globally recognized research institutions to advance the development and deployment of clinical solutions for neurological disorders &mdash; conditions that affect more than three billion people and cost the global economy hundreds of billions of dollars annually.</p>
+          <p class="reveal" style="--reveal-delay:400;">Hosted by SBMT, the world&rsquo;s leading authority in translational neurotechnology.</p>
+        </div>
+      </div>
+      <aside class="about-right" aria-label="N20 by the numbers">
+        <div class="stat-strip">
+          <div class="stat reveal" style="--reveal-delay:300;">
+            <div class="stat-num">13</div>
+            <div class="stat-label">Annual N20 Summits</div>
+          </div>
+          <div class="stat reveal" style="--reveal-delay:380;">
+            <div class="stat-num">24</div>
+            <div class="stat-label">Years of SBMT Leadership</div>
+          </div>
+          <div class="stat reveal" style="--reveal-delay:460;">
+            <div class="stat-num">3B+</div>
+            <div class="stat-label">Patients Worldwide</div>
+          </div>
+          <div class="stat reveal" style="--reveal-delay:540;">
+            <div class="stat-num">G20</div>
+            <div class="stat-label">Aligned Policy Agenda</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 03 · SUMMIT TOPICS ============== -->
+<section id="topics" class="section-block section-pad-xl section-navy" aria-labelledby="topics-h2">
+  <div class="wide-width">
+    <div class="topics-head">
+      <span class="eyebrow reveal" style="--reveal-delay:0;">SUMMIT AGENDA</span>
+      <h2 id="topics-h2" class="section-h2 reveal" style="--reveal-delay:100;">Brain, Spine and Mental Health &mdash; The Full Translational Spectrum</h2>
+      <p class="section-lead reveal" style="--reveal-delay:200;">The 13th Annual N20 Summit convenes evidence-based discussion across the full clinical and translational spectrum of neuroscience. Sessions are structured around the policy, research, and clinical-deployment challenges that define the global brain-health agenda.</p>
+    </div>
+
+    <div class="topics-grid">
+      <article class="topic-card reveal" style="--reveal-delay:120;">
+        <span class="topic-num">01</span>
+        <h3 class="topic-name">Brain Mapping &amp; Therapeutics</h3>
+        <p class="topic-desc">Imaging, connectivity, and image-guided intervention</p>
+      </article>
+      <article class="topic-card reveal" style="--reveal-delay:180;">
+        <span class="topic-num">02</span>
+        <h3 class="topic-name">Neurotechnology Innovation &amp; Investment</h3>
+        <p class="topic-desc">The pipeline from lab to clinic, and the capital that moves it</p>
+      </article>
+      <article class="topic-card reveal" style="--reveal-delay:240;">
+        <span class="topic-num">03</span>
+        <h3 class="topic-name">Artificial Intelligence in Neuroscience</h3>
+        <p class="topic-desc">AI for diagnosis, imaging, and therapeutic decision support</p>
+      </article>
+      <article class="topic-card reveal" style="--reveal-delay:300;">
+        <span class="topic-num">04</span>
+        <h3 class="topic-name">Neuro-Imaging</h3>
+        <p class="topic-desc">Structural and functional imaging at clinical scale</p>
+      </article>
+      <article class="topic-card reveal" style="--reveal-delay:360;">
+        <span class="topic-num">05</span>
+        <h3 class="topic-name">Vascular Neurosurgery</h3>
+        <p class="topic-desc">Stroke, aneurysm, and cerebrovascular intervention</p>
+      </article>
+      <article class="topic-card reveal" style="--reveal-delay:420;">
+        <span class="topic-num">06</span>
+        <h3 class="topic-name">Neuro-Oncology</h3>
+        <p class="topic-desc">Brain tumor diagnosis, surgery, and combination therapy</p>
+      </article>
+      <article class="topic-card reveal" style="--reveal-delay:480;">
+        <span class="topic-num">07</span>
+        <h3 class="topic-name">Mental Health Disorders</h3>
+        <p class="topic-desc">Depression, anxiety, and major mental illness at scale</p>
+      </article>
+      <article class="topic-card reveal" style="--reveal-delay:540;">
+        <span class="topic-num">08</span>
+        <h3 class="topic-name">PTSD &amp; Trauma</h3>
+        <p class="topic-desc">Post-traumatic stress across civilian and military populations</p>
+      </article>
+      <article class="topic-card reveal" style="--reveal-delay:600;">
+        <span class="topic-num">09</span>
+        <h3 class="topic-name">Suicide Prevention</h3>
+        <p class="topic-desc">Risk stratification, intervention, and policy frameworks</p>
+      </article>
+      <article class="topic-card reveal" style="--reveal-delay:660;">
+        <span class="topic-num">10</span>
+        <h3 class="topic-name">Opioid Addiction</h3>
+        <p class="topic-desc">The ongoing pandemic and neurobehavioral interventions</p>
+      </article>
+      <article class="topic-card reveal" style="--reveal-delay:720;">
+        <span class="topic-num">11</span>
+        <h3 class="topic-name">Epilepsy</h3>
+        <p class="topic-desc">Surgical, pharmacologic, and device-based approaches</p>
+      </article>
+      <article class="topic-card reveal" style="--reveal-delay:780;">
+        <span class="topic-num">12</span>
+        <h3 class="topic-name">Spine</h3>
+        <p class="topic-desc">Spinal disease, intervention, and rehabilitation</p>
+      </article>
+      <article class="topic-card reveal" style="--reveal-delay:840;">
+        <span class="topic-num">13</span>
+        <h3 class="topic-name">Neurodegenerative Disease</h3>
+        <p class="topic-desc">MS, ALS, Parkinson&rsquo;s, and Alzheimer&rsquo;s research</p>
+      </article>
+      <article class="topic-card reveal" style="--reveal-delay:900;">
+        <span class="topic-num">14</span>
+        <h3 class="topic-name">Traumatic Brain Injury (TBI)</h3>
+        <p class="topic-desc">Acute care, rehabilitation, and long-term outcomes</p>
+      </article>
+      <article class="topic-card reveal" style="--reveal-delay:960;">
+        <span class="topic-num">15</span>
+        <h3 class="topic-name">Spinal Cord Injury</h3>
+        <p class="topic-desc">Restoration, neuroprosthetics, and rehabilitation</p>
+      </article>
+      <article class="topic-card reveal" style="--reveal-delay:1020;">
+        <span class="topic-num">16</span>
+        <h3 class="topic-name">Regulatory &amp; Policy Frameworks</h3>
+        <p class="topic-desc">FDA, EMA, and cross-border neurotechnology policy</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 04 · 13 YEARS — WORLD MAP ============== -->
+<section id="summits" class="section-block section-light" aria-labelledby="summits-h2">
+  <div class="wide-width">
+    <div class="map-head">
+      <span class="eyebrow reveal" style="--reveal-delay:0;">A DECADE OF GLOBAL CONVERGENCE</span>
+      <h2 id="summits-h2" class="section-h2 reveal" style="--reveal-delay:100;">Thirteen Years. Thirteen Cities. One Global Conversation.</h2>
+      <p class="section-lead reveal" style="--reveal-delay:200;">The N20 Summit has convened across G20 capitals since 2014, driving cross-border policy alignment and translational research collaboration. Miami marks the 13th annual summit and the second U.S. host city in the program&rsquo;s history.</p>
+    </div>
+
+    <!-- World map — Equirectangular projection, viewBox 1000x500 -->
+    <div class="world-map-wrap reveal" style="--reveal-delay:280;" aria-label="World map of N20 Summit host cities">
+      <svg class="world-map" viewBox="0 0 1000 500" role="img" aria-labelledby="map-title" xmlns="http://www.w3.org/2000/svg">
+        <title id="map-title">N20 Summit host cities, 2014 to 2026 — equirectangular world map</title>
+
+        <!-- Graticule: 30° grid -->
+        <g class="map-graticule" aria-hidden="true">
+          <!-- Parallels (lat 60N, 30N, 30S, 60S) -->
+          <line x1="0" y1="83.333" x2="1000" y2="83.333"/>
+          <line x1="0" y1="166.667" x2="1000" y2="166.667"/>
+          <line x1="0" y1="333.333" x2="1000" y2="333.333"/>
+          <line x1="0" y1="416.667" x2="1000" y2="416.667"/>
+          <!-- Meridians every 30° -->
+          <line x1="83.333" y1="0" x2="83.333" y2="500"/>
+          <line x1="166.667" y1="0" x2="166.667" y2="500"/>
+          <line x1="250" y1="0" x2="250" y2="500"/>
+          <line x1="333.333" y1="0" x2="333.333" y2="500"/>
+          <line x1="416.667" y1="0" x2="416.667" y2="500"/>
+          <line x1="500" y1="0" x2="500" y2="500"/>
+          <line x1="583.333" y1="0" x2="583.333" y2="500"/>
+          <line x1="666.667" y1="0" x2="666.667" y2="500"/>
+          <line x1="750" y1="0" x2="750" y2="500"/>
+          <line x1="833.333" y1="0" x2="833.333" y2="500"/>
+          <line x1="916.667" y1="0" x2="916.667" y2="500"/>
+        </g>
+        <!-- Equator (emphasized) -->
+        <line class="map-equator" x1="0" y1="250" x2="1000" y2="250" aria-hidden="true"/>
+
+        <!-- Continents — simplified outlines hand-drawn in equirectangular space -->
+        <g aria-hidden="true">
+          <!-- North America (incl. Greenland, Mexico, Central America) -->
+          <path class="map-continent" d="M115,90 C140,70 175,68 210,75 C240,80 270,92 295,105 L 280,118 L 295,128 L 280,140 L 305,152 L 295,168 L 280,178 L 282,196 L 268,212 L 252,228 L 240,250 L 245,272 L 232,288 L 218,295 L 205,288 L 200,272 L 188,260 L 175,255 L 162,242 L 148,228 L 135,210 L 128,188 L 122,165 L 118,140 Z M 290,98 C 320,92 348,95 365,108 L 358,128 L 340,135 L 322,128 L 305,118 Z"/>
+          <!-- Greenland -->
+          <path class="map-continent" d="M320,75 C345,70 365,75 370,90 C372,108 360,122 345,128 C328,130 315,118 312,102 Z"/>
+          <!-- South America -->
+          <path class="map-continent" d="M275,290 C 295,285 318,292 335,308 C 352,328 365,355 372,385 C 375,408 372,432 360,452 C 348,468 332,475 318,470 C 305,460 298,442 295,422 C 292,402 285,385 280,368 C 272,348 268,328 270,310 Z"/>
+          <!-- Africa -->
+          <path class="map-continent" d="M510,200 C 540,195 575,200 605,212 C 625,225 635,245 638,268 C 640,288 632,308 625,328 C 618,348 605,368 590,385 C 575,398 558,408 542,408 C 525,405 512,392 502,375 C 492,355 488,332 488,308 C 488,285 492,262 498,240 C 502,222 505,210 510,200 Z M 638,212 C 652,210 665,215 670,228 L 660,242 L 645,238 Z"/>
+          <!-- Europe -->
+          <path class="map-continent" d="M475,118 C 500,108 528,105 555,108 C 578,110 600,118 615,128 L 612,142 L 595,148 L 580,142 L 568,150 L 555,148 L 538,158 L 522,162 L 508,165 L 495,160 L 488,148 L 482,135 Z"/>
+          <!-- UK & Ireland -->
+          <path class="map-continent" d="M480,125 C 490,122 498,128 498,138 L 492,148 L 482,148 L 478,138 Z"/>
+          <!-- Scandinavia (peninsula) -->
+          <path class="map-continent" d="M525,82 C 540,78 555,82 562,95 L 558,112 L 548,118 L 538,115 L 528,108 L 522,95 Z"/>
+          <!-- Middle East & Arabia -->
+          <path class="map-continent" d="M595,168 C 615,162 638,162 660,172 C 678,182 690,198 692,218 C 692,235 682,248 668,255 C 652,258 638,252 625,242 C 612,230 602,215 595,200 C 590,188 590,178 595,168 Z"/>
+          <!-- Russia / Northern Asia -->
+          <path class="map-continent" d="M555,92 C 600,82 660,80 720,85 C 775,90 825,98 868,108 L 870,132 L 845,138 L 820,135 L 795,142 L 770,138 L 745,142 L 720,138 L 695,142 L 670,138 L 645,132 L 622,128 L 600,122 L 580,118 L 565,112 Z"/>
+          <!-- Central Asia -->
+          <path class="map-continent" d="M615,138 C 645,135 680,135 710,142 L 712,162 L 695,170 L 678,172 L 658,170 L 638,165 L 622,158 L 615,148 Z"/>
+          <!-- India -->
+          <path class="map-continent" d="M695,168 C 715,168 732,175 740,190 C 745,205 740,222 728,238 C 716,252 705,260 695,258 C 685,252 678,238 672,222 C 668,205 670,188 678,178 C 685,170 690,168 695,168 Z"/>
+          <!-- East Asia mainland (China + Korea) -->
+          <path class="map-continent" d="M738,128 C 770,122 805,122 838,128 C 862,132 880,142 888,158 L 882,175 L 870,182 L 855,180 L 838,182 L 822,178 L 808,180 L 795,178 L 780,180 L 765,178 L 752,172 L 740,162 L 735,148 Z"/>
+          <!-- Japan -->
+          <path class="map-continent" d="M888,138 C 898,135 905,140 905,150 L 898,162 L 892,158 Z M 880,155 C 890,152 895,158 895,168 L 888,178 L 882,172 Z M 875,168 C 882,168 885,175 880,182 L 875,180 Z"/>
+          <!-- SE Asia mainland (Indochina) -->
+          <path class="map-continent" d="M758,200 C 775,198 788,208 792,225 C 792,242 788,258 780,272 C 772,282 762,282 755,272 C 748,260 745,245 748,228 C 750,215 752,205 758,200 Z"/>
+          <!-- Indonesia / Philippines / SE Asia islands -->
+          <path class="map-continent" d="M772,278 C 792,272 815,275 835,282 L 832,295 L 818,300 L 802,298 L 788,295 L 775,290 Z M 845,288 C 855,285 862,292 858,302 L 848,302 Z M 805,265 C 815,262 820,268 818,278 L 808,278 Z M 815,242 C 825,240 832,248 828,258 L 820,258 Z"/>
+          <!-- Australia -->
+          <path class="map-continent" d="M820,322 C 858,318 895,322 922,335 C 938,348 940,365 928,378 C 912,388 888,392 862,388 C 838,385 815,378 802,365 C 795,352 800,338 812,328 Z"/>
+          <!-- New Zealand -->
+          <path class="map-continent" d="M945,372 C 955,370 960,378 956,388 L 948,388 Z M 950,392 C 958,390 962,398 958,405 L 952,405 Z"/>
+          <!-- Madagascar -->
+          <path class="map-continent" d="M652,330 C 660,328 665,335 663,348 C 660,360 655,365 650,358 C 648,348 648,338 652,330 Z"/>
+          <!-- Iceland -->
+          <path class="map-continent" d="M442,108 C 452,105 458,110 456,118 L 446,120 L 440,115 Z"/>
+        </g>
+
+        <!-- =================== PINS =================== -->
+
+        <!-- 01 Brisbane 2014 (AUS) -27.47, 153.03 -->
+        <g class="pin pin--past" transform="translate(925.08,326.31)" tabindex="0" role="img" aria-label="N20 Summit 1: Brisbane, Australia, 2014">
+          <circle class="pin-halo" r="8"/>
+          <circle class="pin-core" r="4"/>
+          <g class="pin-tooltip" transform="translate(0,-12)">
+            <rect x="-50" y="-22" width="100" height="22" rx="2" fill="#ffffff" stroke="#721f14" stroke-width="0.8"/>
+            <text x="0" y="-14" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="6" font-weight="600" letter-spacing="1" fill="#721f14">N20 · #01</text>
+            <text x="0" y="-5" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="6" font-weight="500" fill="#4a1209">BRISBANE · 2014</text>
+          </g>
+        </g>
+
+        <!-- 02 Istanbul 2015 (TUR) 41.01, 28.97 -->
+        <g class="pin pin--past" transform="translate(580.47,136.08)" tabindex="0" role="img" aria-label="N20 Summit 2: Istanbul, Türkiye, 2015">
+          <circle class="pin-halo" r="8"/>
+          <circle class="pin-core" r="4"/>
+          <g class="pin-tooltip" transform="translate(0,-12)">
+            <rect x="-50" y="-22" width="100" height="22" rx="2" fill="#ffffff" stroke="#721f14" stroke-width="0.8"/>
+            <text x="0" y="-14" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="6" font-weight="600" letter-spacing="1" fill="#721f14">N20 · #02</text>
+            <text x="0" y="-5" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="6" font-weight="500" fill="#4a1209">ISTANBUL · 2015</text>
+          </g>
+        </g>
+
+        <!-- 03 Hangzhou 2016 (CHN) 30.27, 120.15 -->
+        <g class="pin pin--past" transform="translate(833.75,165.92)" tabindex="0" role="img" aria-label="N20 Summit 3: Hangzhou, China, 2016">
+          <circle class="pin-halo" r="8"/>
+          <circle class="pin-core" r="4"/>
+          <g class="pin-tooltip" transform="translate(0,-12)">
+            <rect x="-50" y="-22" width="100" height="22" rx="2" fill="#ffffff" stroke="#721f14" stroke-width="0.8"/>
+            <text x="0" y="-14" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="6" font-weight="600" letter-spacing="1" fill="#721f14">N20 · #03</text>
+            <text x="0" y="-5" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="6" font-weight="500" fill="#4a1209">HANGZHOU · 2016</text>
+          </g>
+        </g>
+
+        <!-- 05 Buenos Aires 2017 (ARG) -34.61, -58.38 -->
+        <g class="pin pin--past" transform="translate(338.39,346.14)" tabindex="0" role="img" aria-label="N20 Summit 5: Buenos Aires, Argentina, 2017">
+          <circle class="pin-halo" r="8"/>
+          <circle class="pin-core" r="4"/>
+          <g class="pin-tooltip" transform="translate(0,-12)">
+            <rect x="-55" y="-22" width="110" height="22" rx="2" fill="#ffffff" stroke="#721f14" stroke-width="0.8"/>
+            <text x="0" y="-14" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="6" font-weight="600" letter-spacing="1" fill="#721f14">N20 · #05</text>
+            <text x="0" y="-5" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="6" font-weight="500" fill="#4a1209">BUENOS AIRES · 2017</text>
+          </g>
+        </g>
+
+        <!-- 06 Osaka 2018 (JPN) 34.69, 135.50 -->
+        <g class="pin pin--past" transform="translate(876.39,153.64)" tabindex="0" role="img" aria-label="N20 Summit 6: Osaka, Japan, 2018">
+          <circle class="pin-halo" r="8"/>
+          <circle class="pin-core" r="4"/>
+          <g class="pin-tooltip" transform="translate(0,-12)">
+            <rect x="-50" y="-22" width="100" height="22" rx="2" fill="#ffffff" stroke="#721f14" stroke-width="0.8"/>
+            <text x="0" y="-14" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="6" font-weight="600" letter-spacing="1" fill="#721f14">N20 · #06</text>
+            <text x="0" y="-5" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="6" font-weight="500" fill="#4a1209">OSAKA · 2018</text>
+          </g>
+        </g>
+
+        <!-- 07 Riyadh 2019 (SAU, virtual) 24.71, 46.67 -->
+        <g class="pin pin--virtual" transform="translate(629.64,181.36)" tabindex="0" role="img" aria-label="N20 Summit 7: Riyadh, Saudi Arabia, 2019, Virtual">
+          <circle class="pin-halo" r="8"/>
+          <circle class="pin-core" r="4"/>
+          <g class="pin-tooltip" transform="translate(0,-12)">
+            <rect x="-55" y="-22" width="110" height="22" rx="2" fill="#ffffff" stroke="#721f14" stroke-width="0.8"/>
+            <text x="0" y="-14" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="6" font-weight="600" letter-spacing="1" fill="#721f14">N20 · #07 · VIRTUAL</text>
+            <text x="0" y="-5" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="6" font-weight="500" fill="#4a1209">RIYADH · 2019</text>
+          </g>
+        </g>
+
+        <!-- 08 Rome 2020 (ITA, virtual) 41.90, 12.50 -->
+        <g class="pin pin--virtual" transform="translate(534.72,133.61)" tabindex="0" role="img" aria-label="N20 Summit 8: Rome, Italy, 2020, Virtual">
+          <circle class="pin-halo" r="8"/>
+          <circle class="pin-core" r="4"/>
+          <g class="pin-tooltip" transform="translate(0,-12)">
+            <rect x="-55" y="-22" width="110" height="22" rx="2" fill="#ffffff" stroke="#721f14" stroke-width="0.8"/>
+            <text x="0" y="-14" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="6" font-weight="600" letter-spacing="1" fill="#721f14">N20 · #08 · VIRTUAL</text>
+            <text x="0" y="-5" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="6" font-weight="500" fill="#4a1209">ROME · 2020</text>
+          </g>
+        </g>
+
+        <!-- 09 Bali 2021 (IDN) -8.34, 115.09 -->
+        <g class="pin pin--past" transform="translate(819.69,273.17)" tabindex="0" role="img" aria-label="N20 Summit 9: Bali, Indonesia, 2021">
+          <circle class="pin-halo" r="8"/>
+          <circle class="pin-core" r="4"/>
+          <g class="pin-tooltip" transform="translate(0,-12)">
+            <rect x="-50" y="-22" width="100" height="22" rx="2" fill="#ffffff" stroke="#721f14" stroke-width="0.8"/>
+            <text x="0" y="-14" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="6" font-weight="600" letter-spacing="1" fill="#721f14">N20 · #09</text>
+            <text x="0" y="-5" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="6" font-weight="500" fill="#4a1209">BALI · 2021</text>
+          </g>
+        </g>
+
+        <!-- 10 New Delhi 2022 (IND) 28.61, 77.21 -->
+        <g class="pin pin--past" transform="translate(714.47,170.53)" tabindex="0" role="img" aria-label="N20 Summit 10: New Delhi, India, 2022">
+          <circle class="pin-halo" r="8"/>
+          <circle class="pin-core" r="4"/>
+          <g class="pin-tooltip" transform="translate(0,-12)">
+            <rect x="-50" y="-22" width="100" height="22" rx="2" fill="#ffffff" stroke="#721f14" stroke-width="0.8"/>
+            <text x="0" y="-14" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="6" font-weight="600" letter-spacing="1" fill="#721f14">N20 · #10</text>
+            <text x="0" y="-5" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="6" font-weight="500" fill="#4a1209">NEW DELHI · 2022</text>
+          </g>
+        </g>
+
+        <!-- 11 Rio de Janeiro 2023 (BRA) -22.91, -43.17 -->
+        <g class="pin pin--past" transform="translate(380.08,313.64)" tabindex="0" role="img" aria-label="N20 Summit 11: Rio de Janeiro, Brazil, 2023">
+          <circle class="pin-halo" r="8"/>
+          <circle class="pin-core" r="4"/>
+          <g class="pin-tooltip" transform="translate(0,-12)">
+            <rect x="-55" y="-22" width="110" height="22" rx="2" fill="#ffffff" stroke="#721f14" stroke-width="0.8"/>
+            <text x="0" y="-14" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="6" font-weight="600" letter-spacing="1" fill="#721f14">N20 · #11</text>
+            <text x="0" y="-5" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="6" font-weight="500" fill="#4a1209">RIO DE JANEIRO · 2023</text>
+          </g>
+        </g>
+
+        <!-- 12 Johannesburg 2024 (RSA) -26.20, 28.05 -->
+        <g class="pin pin--past" transform="translate(577.92,322.78)" tabindex="0" role="img" aria-label="N20 Summit 12: Johannesburg, South Africa, 2024">
+          <circle class="pin-halo" r="8"/>
+          <circle class="pin-core" r="4"/>
+          <g class="pin-tooltip" transform="translate(0,-12)">
+            <rect x="-55" y="-22" width="110" height="22" rx="2" fill="#ffffff" stroke="#721f14" stroke-width="0.8"/>
+            <text x="0" y="-14" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="6" font-weight="600" letter-spacing="1" fill="#721f14">N20 · #12</text>
+            <text x="0" y="-5" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="6" font-weight="500" fill="#4a1209">JOHANNESBURG · 2024</text>
+          </g>
+        </g>
+
+        <!-- 14 Hamburg 2027 (upcoming) 53.55, 9.99 -->
+        <g class="pin pin--upcoming" transform="translate(527.75,101.25)" tabindex="0" role="img" aria-label="N20 Summit 14: Hamburg, Germany, 2027, Upcoming">
+          <circle class="pin-core" r="4"/>
+          <g class="pin-tooltip" transform="translate(0,-10)">
+            <rect x="-55" y="-22" width="110" height="22" rx="2" fill="#ffffff" stroke="#721f14" stroke-width="0.8"/>
+            <text x="0" y="-14" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="6" font-weight="600" letter-spacing="1" fill="#721f14">N20 · #14 · UPCOMING</text>
+            <text x="0" y="-5" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="6" font-weight="500" fill="#4a1209">HAMBURG · 2027</text>
+          </g>
+        </g>
+
+        <!-- 13 Miami 2026 (USA) — FEATURED — 25.76, -80.19 -->
+        <g class="pin pin--current" transform="translate(277.25,178.44)" tabindex="0" role="img" aria-label="N20 Summit 13: Miami, Florida, USA, 2026 — Current Edition">
+          <circle class="pulse-ring" cx="0" cy="0" r="10"/>
+          <circle class="pin-core" r="8"/>
+          <text class="miami-label" x="0" y="-16" text-anchor="middle">MIAMI · 2026</text>
+          <text x="0" y="-23" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="5" font-weight="500" letter-spacing="1.8" fill="#721f14">N20 · 13TH ANNUAL</text>
+          <g class="pin-tooltip" transform="translate(0,16)">
+            <rect x="-55" y="0" width="110" height="22" rx="2" fill="#ffffff" stroke="#721f14" stroke-width="0.8"/>
+            <text x="0" y="9" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="6" font-weight="600" letter-spacing="1" fill="#721f14">N20 · #13 · CURRENT</text>
+            <text x="0" y="18" text-anchor="middle" font-family="Montserrat, sans-serif" font-size="6" font-weight="500" fill="#4a1209">MIAMI, FLORIDA · 2026</text>
+          </g>
+        </g>
+      </svg>
+    </div>
+
+    <ol class="summits-list" aria-label="N20 Summit history">
+      <li class="summit-item reveal" style="--reveal-delay:120;">
+        <span class="s-num">N20 · 01</span>
+        <span class="s-city">Brisbane</span>
+        <span class="s-meta">Australia · 2014</span>
+      </li>
+      <li class="summit-item reveal" style="--reveal-delay:160;">
+        <span class="s-num">N20 · 02</span>
+        <span class="s-city">Istanbul</span>
+        <span class="s-meta">Türkiye · 2015</span>
+      </li>
+      <li class="summit-item reveal" style="--reveal-delay:200;">
+        <span class="s-num">N20 · 03</span>
+        <span class="s-city">Hangzhou</span>
+        <span class="s-meta">China · 2016</span>
+      </li>
+      <li class="summit-item reveal" style="--reveal-delay:240;">
+        <span class="s-num">N20 · 05</span>
+        <span class="s-city">Buenos Aires</span>
+        <span class="s-meta">Argentina · 2017</span>
+      </li>
+      <li class="summit-item reveal" style="--reveal-delay:280;">
+        <span class="s-num">N20 · 06</span>
+        <span class="s-city">Osaka</span>
+        <span class="s-meta">Japan · 2018</span>
+      </li>
+      <li class="summit-item reveal" style="--reveal-delay:320;">
+        <span class="s-num">N20 · 07</span>
+        <span class="s-city">Riyadh</span>
+        <span class="s-meta">Saudi Arabia · 2019 · Virtual</span>
+      </li>
+      <li class="summit-item reveal" style="--reveal-delay:360;">
+        <span class="s-num">N20 · 08</span>
+        <span class="s-city">Rome</span>
+        <span class="s-meta">Italy · 2020 · Virtual</span>
+      </li>
+      <li class="summit-item reveal" style="--reveal-delay:400;">
+        <span class="s-num">N20 · 09</span>
+        <span class="s-city">Bali</span>
+        <span class="s-meta">Indonesia · 2021</span>
+      </li>
+      <li class="summit-item reveal" style="--reveal-delay:440;">
+        <span class="s-num">N20 · 10</span>
+        <span class="s-city">New Delhi</span>
+        <span class="s-meta">India · 2022</span>
+      </li>
+      <li class="summit-item reveal" style="--reveal-delay:480;">
+        <span class="s-num">N20 · 11</span>
+        <span class="s-city">Rio de Janeiro</span>
+        <span class="s-meta">Brazil · 2023</span>
+      </li>
+      <li class="summit-item reveal" style="--reveal-delay:520;">
+        <span class="s-num">N20 · 12</span>
+        <span class="s-city">Johannesburg</span>
+        <span class="s-meta">South Africa · 2024</span>
+      </li>
+      <li class="summit-item is-current reveal" style="--reveal-delay:560;">
+        <span class="s-num">N20 · 13</span>
+        <span class="s-city">Miami, Florida</span>
+        <span class="s-meta">USA · 2026</span>
+        <span class="s-tag">Current</span>
+      </li>
+      <li class="summit-item is-upcoming reveal" style="--reveal-delay:600;">
+        <span class="s-num">N20 · 14</span>
+        <span class="s-city">Hamburg</span>
+        <span class="s-meta">Germany · 2027</span>
+        <span class="s-tag">Upcoming</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============== 06 · WHY PARTNER ============== -->
+<section id="partnership" class="section-block section-pad-xl section-light" aria-labelledby="partner-h2">
+  <div class="wide-width">
+    <div class="pillars-head">
+      <span class="eyebrow reveal" style="--reveal-delay:0;">SPONSORSHIP</span>
+      <h2 id="partner-h2" class="section-h2 reveal" style="--reveal-delay:100;">Why Partner with N20</h2>
+      <p class="section-lead reveal" style="--reveal-delay:200;">Aligning with the Neuroscience20 Summit positions your organization at the global intersection of neurotechnology, policy, and clinical practice. Four anchors define what partnership delivers.</p>
+    </div>
+
+    <div class="pillars-grid">
+      <article class="pillar-card reveal" style="--reveal-delay:280;">
+        <div class="pillar-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9" />
+            <ellipse cx="12" cy="12" rx="4" ry="9" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <path d="M5 7c3 2 11 2 14 0" />
+            <path d="M5 17c3-2 11-2 14 0" />
+          </svg>
+        </div>
+        <div>
+          <h3 class="pillar-name">Global Visibility</h3>
+          <p class="pillar-desc">Position your organization among the world&rsquo;s leading neuroscience and healthcare innovators, in front of policymakers and clinical decision-makers across G20 nations.</p>
+        </div>
+      </article>
+
+      <article class="pillar-card reveal" style="--reveal-delay:340;">
+        <div class="pillar-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="5" cy="6" r="2.2" />
+            <circle cx="19" cy="6" r="2.2" />
+            <circle cx="12" cy="13" r="2.2" />
+            <circle cx="5" cy="20" r="2.2" />
+            <circle cx="19" cy="20" r="2.2" />
+            <line x1="6.5" y1="7.5" x2="10.5" y2="11.5" />
+            <line x1="17.5" y1="7.5" x2="13.5" y2="11.5" />
+            <line x1="6.5" y1="18.5" x2="10.5" y2="14.5" />
+            <line x1="17.5" y1="18.5" x2="13.5" y2="14.5" />
+          </svg>
+        </div>
+        <div>
+          <h3 class="pillar-name">Strategic Partnerships</h3>
+          <p class="pillar-desc">Build long-term relationships with clinicians, researchers, industry leaders, and policymakers shaping the future of brain, spine, and mental health.</p>
+        </div>
+      </article>
+
+      <article class="pillar-card reveal" style="--reveal-delay:400;">
+        <div class="pillar-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="4" y1="20" x2="4" y2="14" />
+            <line x1="9" y1="20" x2="9" y2="11" />
+            <line x1="14" y1="20" x2="14" y2="8" />
+            <line x1="19" y1="20" x2="19" y2="4" />
+          </svg>
+        </div>
+        <div>
+          <h3 class="pillar-name">Innovation Leadership</h3>
+          <p class="pillar-desc">Showcase your work in neurotechnology, AI, and therapeutic advancement to the audience that translates breakthroughs into clinical practice.</p>
+        </div>
+      </article>
+
+      <article class="pillar-card reveal" style="--reveal-delay:460;">
+        <div class="pillar-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9" />
+            <circle cx="12" cy="12" r="6" />
+            <circle cx="12" cy="12" r="3" />
+            <circle cx="12" cy="12" r="1" fill="currentColor" />
+          </svg>
+        </div>
+        <div>
+          <h3 class="pillar-name">Access to Decision-Makers</h3>
+          <p class="pillar-desc">Engage directly with the global leaders shaping policy frameworks, regulatory pathways, and research funding for brain health.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 07 · PARTNERSHIP TIERS ============== -->
+<section id="tiers" class="section-block section-pad-xl section-navy" aria-labelledby="tiers-h2">
+  <div class="wide-width">
+    <div class="tiers-head">
+      <span class="eyebrow reveal" style="--reveal-delay:0;">PARTNERSHIP TIERS</span>
+      <h2 id="tiers-h2" class="section-h2 reveal" style="--reveal-delay:100;">Five Pathways to Align with the N20 Summit</h2>
+      <p class="section-lead reveal" style="--reveal-delay:200;">Each tier delivers structured access and visibility appropriate to the level of engagement. All sales are final; payment is due within 30 days of invoice.</p>
+    </div>
+
+    <div class="tiers-grid">
+
+      <article class="tier-card reveal" style="--reveal-delay:120;">
+        <span class="tier-label">Tier 01</span>
+        <h3 class="tier-name">Sapphire Sponsor</h3>
+        <div class="tier-price">$10,000 <small>USD</small></div>
+        <div class="tier-divider"></div>
+        <ul class="tier-benefits">
+          <li>Three attendees</li>
+          <li>One table-top exhibition</li>
+          <li>Reception access</li>
+          <li>Logo on program</li>
+        </ul>
+        <a class="tier-cta" href="https://rmezpwdpuaktuyq.eventify.io/t2/tickets/F75870" target="_blank" rel="noopener">Reserve <span class="arr">&rarr;</span></a>
+      </article>
+
+      <article class="tier-card reveal" style="--reveal-delay:200;">
+        <span class="tier-label">Tier 02</span>
+        <h3 class="tier-name">Silver Sponsor</h3>
+        <div class="tier-price">$20,000 <small>USD</small></div>
+        <div class="tier-divider"></div>
+        <ul class="tier-benefits">
+          <li>Five attendees</li>
+          <li>Reception access</li>
+          <li>Table-top exhibition</li>
+          <li>Social media highlights</li>
+          <li>Logo on program</li>
+        </ul>
+        <a class="tier-cta" href="https://rmezpwdpuaktuyq.eventify.io/t2/tickets/9296CD" target="_blank" rel="noopener">Reserve <span class="arr">&rarr;</span></a>
+      </article>
+
+      <article class="tier-card is-prestige reveal" style="--reveal-delay:280;">
+        <span class="tier-label">Tier 03</span>
+        <h3 class="tier-name">Gold Sponsor</h3>
+        <div class="tier-price">$30,000 <small>USD</small></div>
+        <div class="tier-divider"></div>
+        <ul class="tier-benefits">
+          <li>Seven attendees</li>
+          <li>Panel sponsorship</li>
+          <li>Reception access</li>
+          <li>Exhibition space</li>
+          <li>Breakfast sponsorship</li>
+          <li>Brain Mapping TV highlight</li>
+          <li>Social media highlights</li>
+          <li>Logo on program</li>
+        </ul>
+        <a class="tier-cta" href="https://rmezpwdpuaktuyq.eventify.io/t2/tickets/3A845F" target="_blank" rel="noopener">Reserve <span class="arr">&rarr;</span></a>
+      </article>
+
+      <article class="tier-card is-prestige reveal" style="--reveal-delay:360;">
+        <span class="tier-label">Tier 04</span>
+        <h3 class="tier-name">Diamond Sponsor</h3>
+        <div class="tier-price">$40,000 <small>USD</small></div>
+        <div class="tier-divider"></div>
+        <ul class="tier-benefits">
+          <li>Ten attendees</li>
+          <li>Luncheon sponsorship</li>
+          <li>Reception access</li>
+          <li>Sponsored panel</li>
+          <li>Brain Mapping TV highlight</li>
+          <li>Social media highlights</li>
+          <li>Logo on program</li>
+        </ul>
+        <a class="tier-cta" href="https://rmezpwdpuaktuyq.eventify.io/t2/tickets/C60015" target="_blank" rel="noopener">Reserve <span class="arr">&rarr;</span></a>
+      </article>
+
+      <article class="tier-card is-prestige is-featured reveal" style="--reveal-delay:440;">
+        <span class="tier-label">Tier 05</span>
+        <h3 class="tier-name">Visionary Sponsor</h3>
+        <div class="tier-price">$50,000 <small>USD</small></div>
+        <div class="tier-divider"></div>
+        <ul class="tier-benefits">
+          <li>Sponsored reception</li>
+          <li>Sponsored keynote</li>
+          <li>Sponsored panel</li>
+          <li>Brain Mapping TV highlight</li>
+          <li>Social media highlights</li>
+          <li>Exhibition space</li>
+          <li>Logo on program</li>
+          <li>Attendee mailing list access</li>
+        </ul>
+        <a class="tier-cta" href="https://rmezpwdpuaktuyq.eventify.io/t2/tickets/9DAA53" target="_blank" rel="noopener">Reserve <span class="arr">&rarr;</span></a>
+      </article>
+
+    </div>
+
+    <p class="tiers-terms reveal" style="--reveal-delay:520;">Prices shown are net. A processing fee (approximately 3%) is applied at checkout. Acceptance of participation and exhibition is at the discretion of the Symposium. All sales are final. Payment due within 30 days of invoice.</p>
+  </div>
+</section>
+
+<!-- ============== 08 · STRATEGIC PARTNER ============== -->
+<section id="strategic" class="section-block section-burgundy" aria-labelledby="strategic-h2">
+  <div class="wide-width">
+    <div class="partner-grid">
+      <div class="partner-left">
+        <span class="eyebrow reveal" style="--reveal-delay:0; color: var(--gold);">STRATEGIC PARTNERSHIP</span>
+        <h2 id="strategic-h2" class="section-h2 reveal" style="--reveal-delay:100;">In the future of brain, spine, and mental health innovation.</h2>
+        <p class="partner-body reveal" style="--reveal-delay:200;">Premium partnership opportunities are limited. Direct conversations with SBMT leadership are reserved for organizations seeking visibility at the keynote, panel, and policy-program level. To open this conversation, contact Dr. Babak Kateb.</p>
+        <a class="btn btn-primary reveal" style="--reveal-delay:300;" href="#sponsorship-inquiry?tier=visionary">
+          Request a partnership conversation
+          <svg class="arrow" viewBox="0 0 14 10" aria-hidden="true">
+            <path d="M0 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="square" />
+          </svg>
+        </a>
+      </div>
+
+      <aside class="founder-card reveal" style="--reveal-delay:280;" aria-label="Founder contact card">
+        <div class="founder-photo">
+          <img src="https://www.worldbrainmapping.org/wp-content/uploads/2025/02/Babak-Kateb.png" alt="Dr. Babak Kateb, Founder and CEO of the Society for Brain Mapping & Therapeutics" loading="lazy" decoding="async" />
+        </div>
+        <h3 class="founder-name">DR. BABAK KATEB</h3>
+        <p class="founder-title">Founder and CEO<br>Society for Brain Mapping &amp; Therapeutics</p>
+        <div class="founder-contact">
+          <a href="mailto:babak.kateb@worldbrainmapping.org">babak.kateb@worldbrainmapping.org</a><br>
+          <a href="tel:+13105000996">+1 (310) 500-0996</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 09 · SPONSORSHIP INQUIRY FORM ============== -->
+<section id="sponsorship-inquiry" class="section-block section-pad-xl section-light" aria-labelledby="inquiry-h2">
+  <div class="wide-width">
+    <div class="form-head">
+      <span class="eyebrow reveal" style="--reveal-delay:0;">INQUIRY</span>
+      <h2 id="inquiry-h2" class="section-h2 reveal" style="--reveal-delay:100;">Sponsorship Inquiry</h2>
+      <p class="section-lead reveal" style="--reveal-delay:200;">Submit your inquiry below. A member of the SBMT team will respond within two business days to confirm details and next steps. For immediate questions, contact Dr. Babak Kateb directly at babak.kateb@worldbrainmapping.org.</p>
+    </div>
+
+    <form id="inquiry-form" class="inquiry-form reveal" style="--reveal-delay:300;" novalidate onsubmit="return n20InquiryToMailto(event)">
+      <div class="field">
+        <label for="f-name">Full name <span class="req" aria-hidden="true">*</span></label>
+        <input id="f-name" name="name" type="text" required autocomplete="name" aria-required="true" aria-describedby="f-name-err">
+        <div class="field-error" id="f-name-err" role="alert"></div>
+      </div>
+
+      <div class="field">
+        <label for="f-org">Organization <span class="req" aria-hidden="true">*</span></label>
+        <input id="f-org" name="organization" type="text" required autocomplete="organization" aria-required="true" aria-describedby="f-org-err">
+        <div class="field-error" id="f-org-err" role="alert"></div>
+      </div>
+
+      <div class="field">
+        <label for="f-title">Title / Role</label>
+        <input id="f-title" name="title" type="text" autocomplete="organization-title" aria-describedby="f-title-err">
+        <div class="field-error" id="f-title-err" role="alert"></div>
+      </div>
+
+      <div class="field">
+        <label for="f-email">Email <span class="req" aria-hidden="true">*</span></label>
+        <input id="f-email" name="email" type="email" required autocomplete="email" aria-required="true" aria-describedby="f-email-err">
+        <div class="field-error" id="f-email-err" role="alert"></div>
+      </div>
+
+      <div class="field">
+        <label for="f-phone">Phone</label>
+        <input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="+1 555 555 5555" aria-describedby="f-phone-err">
+        <div class="field-error" id="f-phone-err" role="alert"></div>
+      </div>
+
+      <div class="field">
+        <label for="f-country">Country <span class="req" aria-hidden="true">*</span></label>
+        <select id="f-country" name="country" required aria-required="true" aria-describedby="f-country-err">
+          <option value="" disabled selected>Select your country</option>
+          <option>Argentina</option>
+          <option>Australia</option>
+          <option>Brazil</option>
+          <option>Canada</option>
+          <option>China</option>
+          <option>France</option>
+          <option>Germany</option>
+          <option>India</option>
+          <option>Indonesia</option>
+          <option>Italy</option>
+          <option>Japan</option>
+          <option>Mexico</option>
+          <option>Russia</option>
+          <option>Saudi Arabia</option>
+          <option>South Africa</option>
+          <option>South Korea</option>
+          <option>Türkiye</option>
+          <option>United Kingdom</option>
+          <option>United States</option>
+          <option>European Union</option>
+          <option>Other</option>
+        </select>
+        <div class="field-error" id="f-country-err" role="alert"></div>
+      </div>
+
+      <div class="field field-full">
+        <label for="f-tier">Tier of interest <span class="req" aria-hidden="true">*</span></label>
+        <select id="f-tier" name="tier" required aria-required="true" aria-describedby="f-tier-err">
+          <option value="" disabled selected>Select a tier</option>
+          <option value="strategic">Custom / Strategic Partnership</option>
+          <option value="visionary">Visionary — Beyond the standard tiers</option>
+          <option value="info">Information only</option>
+        </select>
+        <div class="field-error" id="f-tier-err" role="alert"></div>
+      </div>
+
+      <div class="field field-full">
+        <label for="f-message">Message / Additional context</label>
+        <textarea id="f-message" name="message" rows="5" aria-describedby="f-message-err"></textarea>
+        <div class="field-error" id="f-message-err" role="alert"></div>
+      </div>
+
+      <div class="privacy-row">
+        <input type="checkbox" id="f-privacy" name="privacy" required aria-required="true">
+        <label for="f-privacy">I have read and accept SBMT&rsquo;s <a href="/privacy-policy/">privacy policy</a>. <span style="color: #8a6b00;" aria-hidden="true">*</span></label>
+      </div>
+
+      <div class="submit-row">
+        <button type="submit" class="btn btn-primary">
+          Submit inquiry
+          <svg class="arrow" viewBox="0 0 14 10" aria-hidden="true">
+            <path d="M0 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="square" />
+          </svg>
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ============== 10 · SAVE THE DATE ============== -->
+<section id="savedate" class="section-block section-pad-xl section-navy savedate" aria-labelledby="savedate-h2">
+  <div class="savedate-pattern" aria-hidden="true">
+    <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+      <g stroke="#ffffff" stroke-width="0.6" fill="none" opacity="0.7">
+        <path d="M120 220 C 260 140, 380 320, 520 220 S 760 120, 900 240" />
+        <path d="M180 380 C 320 300, 440 480, 600 400 S 820 320, 980 420" />
+        <path d="M240 540 C 380 460, 520 620, 680 560 S 900 480, 1060 580" />
+        <path d="M300 700 C 460 620, 600 780, 760 700 S 980 620, 1140 720" />
+        <path d="M1180 180 C 1320 260, 1420 140, 1540 220" />
+        <path d="M1100 360 C 1260 440, 1380 320, 1540 400" />
+        <path d="M1040 540 C 1200 620, 1340 500, 1500 580" />
+        <path d="M980 720 C 1140 800, 1280 680, 1500 760" />
+      </g>
+      <g fill="#ffde59">
+        <circle cx="120"  cy="220" r="2.4" />
+        <circle cx="520"  cy="220" r="2.4" />
+        <circle cx="900"  cy="240" r="2.4" />
+        <circle cx="180"  cy="380" r="2.4" />
+        <circle cx="600"  cy="400" r="2.4" />
+        <circle cx="980"  cy="420" r="2.4" />
+        <circle cx="240"  cy="540" r="2.4" />
+        <circle cx="680"  cy="560" r="2.4" />
+        <circle cx="1060" cy="580" r="2.4" />
+        <circle cx="300"  cy="700" r="2.4" />
+        <circle cx="760"  cy="700" r="2.4" />
+        <circle cx="1140" cy="720" r="2.4" />
+      </g>
+    </svg>
+  </div>
+
+  <div class="wide-width savedate-inner">
+    <span class="savedate-eyebrow reveal" style="--reveal-delay:0;">SAVE THE DATE</span>
+    <h2 id="savedate-h2" class="savedate-date reveal" style="--reveal-delay:120;">DEC 11&ndash;13</h2>
+    <div class="savedate-year reveal" style="--reveal-delay:220;">2026</div>
+    <div class="savedate-location reveal" style="--reveal-delay:320;">MIAMI <span class="sep">·</span> FLORIDA <span class="sep">·</span> USA</div>
+
+    <div class="savedate-cta reveal" style="--reveal-delay:440;">
+      <a class="btn btn-primary" href="/wp-content/uploads/2026/05/N20-Miami-2026.ics" download>
+        Add to calendar
+        <svg class="arrow" viewBox="0 0 14 14" aria-hidden="true">
+          <path d="M7 1v9M3 7l4 4 4-4M1 13h12" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="square" stroke-linejoin="miter" />
+        </svg>
+      </a>
+      <a class="btn btn-secondary" href="https://www.worldbrainmapping.org/wp-content/uploads/2026/05/N20-Miami-Event-Prospectus.pdf" download>
+        Download the prospectus
+        <svg class="arrow" viewBox="0 0 14 14" aria-hidden="true">
+          <path d="M7 1v9M3 7l4 4 4-4M1 13h12" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="square" stroke-linejoin="miter" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============== 11 · FOOTER ============== -->
+<footer class="site-footer" aria-labelledby="footer-heading">
+  <h2 id="footer-heading" class="visually-hidden" style="position:absolute;left:-10000px;">Site footer</h2>
+  <div class="wide-width">
+    <div class="footer-grid">
+
+      <div class="footer-col">
+        <div class="footer-org-head">
+          <svg class="footer-seal" viewBox="0 0 80 80" aria-hidden="true">
+            <circle cx="40" cy="40" r="36" fill="none" stroke="currentColor" stroke-width="1" opacity="0.9" />
+            <circle cx="40" cy="40" r="30" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.4" />
+            <g stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round">
+              <path d="M28 42c-3-3-3-9 1-11 0-4 5-6 8-4 3-2 8 0 8 4 4 2 4 8 1 11" />
+              <path d="M30 42c2 3 6 3 8 1" />
+              <path d="M42 43c2 2 6 2 8-1" />
+              <circle cx="32" cy="36" r="1" fill="currentColor" />
+              <circle cx="40" cy="34" r="1" fill="currentColor" />
+              <circle cx="48" cy="36" r="1" fill="currentColor" />
+            </g>
+            <text x="40" y="58" text-anchor="middle" font-family="Chakra Petch, sans-serif" font-size="6" font-weight="700" letter-spacing="0.3" fill="currentColor">SBMT</text>
+          </svg>
+          <span class="footer-org-name">SBMT</span>
+        </div>
+        <p class="footer-org-addr">
+          <strong>Society for Brain Mapping<br>&amp; Therapeutics</strong>
+          2080 Century Park East, Suite 500<br>
+          Los Angeles, CA 90067, USA<br><br>
+          Office: <a href="tel:+13105000996">+1 (310) 500-0996</a><br>
+          Fax: +1 (323) 664-5811<br>
+          <a href="mailto:info@worldbrainmapping.org">info@worldbrainmapping.org</a>
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Summit</h4>
+        <ul class="footer-list">
+          <li><a href="#about">About N20</a></li>
+          <li><a href="#topics">Summit Topics</a></li>
+          <li><a href="#tiers">Partnership Tiers</a></li>
+          <li><a href="#sponsorship-inquiry">Sponsorship Inquiry</a></li>
+          <li><a href="https://www.worldbrainmapping.org/wp-content/uploads/2026/05/N20-Miami-Event-Prospectus.pdf" download>Download Prospectus</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>SBMT</h4>
+        <ul class="footer-list">
+          <li><a href="https://www.worldbrainmapping.org/about/">About SBMT</a></li>
+          <li><a href="https://www.worldbrainmapping.org/membership/">Membership</a></li>
+          <li><a href="https://www.worldbrainmapping.org/annual-world-congress/">Annual World Congress</a></li>
+          <li><a href="https://www.worldbrainmapping.org/brain-mapping-foundation/">Brain Mapping Foundation</a></li>
+          <li><a href="https://www.worldbrainmapping.org/brain-mapping-day/">Brain Mapping Day</a></li>
+          <li><a href="https://www.worldbrainmapping.org/global-chapters/">Global Chapters</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul class="footer-list">
+          <li><a href="https://www.worldbrainmapping.org/brain-mapping-tv/">Brain Mapping TV</a></li>
+          <li><a href="#summits">Past Summits</a></li>
+          <li><a href="https://www.worldbrainmapping.org/press-media/">Press &amp; Media</a></li>
+          <li><a href="/privacy-policy/">Privacy Policy</a></li>
+          <li><a href="/terms-of-use/">Terms of Use</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">&copy; 2026 Society for Brain Mapping &amp; Therapeutics. All rights reserved.</p>
+      <ul class="footer-social" aria-label="Social media">
+        <li>
+          <a href="https://www.linkedin.com/" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M19 0H5C2.2 0 0 2.2 0 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5V5c0-2.8-2.2-5-5-5zM8 19H5V8h3v11zM6.5 6.7c-1 0-1.7-.8-1.7-1.7s.8-1.7 1.7-1.7 1.7.8 1.7 1.7-.7 1.7-1.7 1.7zM20 19h-3v-5.6c0-3.4-4-3.1-4 0V19h-3V8h3v1.8c1.4-2.6 7-2.8 7 2.5V19z"/>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://x.com/" aria-label="X">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117l11.966 15.644z"/>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M23.5 6.2c-.3-1-1.1-1.8-2.1-2C19.5 3.8 12 3.8 12 3.8s-7.5 0-9.4.4c-1 .2-1.8 1-2.1 2C0 8.2 0 12 0 12s0 3.8.5 5.8c.3 1 1.1 1.8 2.1 2 1.9.4 9.4.4 9.4.4s7.5 0 9.4-.4c1-.2 1.8-1 2.1-2 .5-2 .5-5.8.5-5.8s0-3.8-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<!-- ============== Schema.org Event ============== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": "13th Annual Neuroscience20 Summit — Brain, Spine and Mental Health",
+  "alternateName": "N20 Miami",
+  "startDate": "2026-12-11T09:00:00-05:00",
+  "endDate": "2026-12-13T18:00:00-05:00",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {
+    "@type": "Place",
+    "name": "Miami, Florida",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Miami",
+      "addressRegion": "FL",
+      "addressCountry": "US"
+    }
+  },
+  "image": "https://www.worldbrainmapping.org/wp-content/uploads/2026/05/n20miami-og.jpg",
+  "description": "The Neuroscience20 Summit convenes global leaders in neurotechnology, policy, and clinical practice across G20 nations.",
+  "organizer": {
+    "@type": "Organization",
+    "name": "Society for Brain Mapping & Therapeutics",
+    "url": "https://www.worldbrainmapping.org",
+    "email": "babak.kateb@worldbrainmapping.org"
+  }
+}
+</script>
+
+<!-- ============== Inquiry form mailto handler ============== -->
+<script>
+  function n20InquiryToMailto(e) {
+    e.preventDefault();
+    var f = e.target;
+    var get = function(name) { var el = f.querySelector('[name="'+name+'"]'); return el ? el.value : ''; };
+    var subject = '[N20 Miami · Sponsorship Inquiry · ' + (get('tier') || 'Unspecified') + '] ' + (get('organization') || '') + ' — ' + (get('name') || '');
+    var body = [
+      'Full name: ' + get('name'),
+      'Organization: ' + get('organization'),
+      'Title: ' + get('title'),
+      'Email: ' + get('email'),
+      'Phone: ' + get('phone'),
+      'Country: ' + get('country'),
+      'Tier of interest: ' + get('tier'),
+      '',
+      'Message:',
+      get('message')
+    ].join('\n');
+    window.location.href = 'mailto:babak.kateb@worldbrainmapping.org?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    return false;
+  }
+</script>
+
+<!-- ============== Scroll reveal + year chips ============== -->
+<script>
+  (function () {
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var revealEls = document.querySelectorAll('.reveal');
+
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+    } else {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+      revealEls.forEach(function (el) { io.observe(el); });
+    }
+
+    // Year chip activation (purely visual placeholder behavior)
+    var chips = document.querySelectorAll('.year-chip');
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        chips.forEach(function (c) { c.classList.remove('is-active'); c.removeAttribute('aria-current'); });
+        chip.classList.add('is-active');
+        chip.setAttribute('aria-current', 'true');
+      });
+    });
+  })();
+</script>
+
+
+<script>
+(function(){
+  var lastH = 0;
+  function sendHeight(){
+    var h = Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight,
+      document.body.offsetHeight,
+      document.documentElement.offsetHeight
+    );
+    if (Math.abs(h - lastH) < 2) return; // debounce noise
+    lastH = h;
+    try { window.parent.postMessage({ type: 'n20-iframe-height', height: h }, '*'); } catch(e){}
+  }
+  // Send on load, resize, and content mutations
+  window.addEventListener('load', sendHeight);
+  window.addEventListener('resize', sendHeight);
+  if (typeof ResizeObserver !== 'undefined') {
+    try { new ResizeObserver(sendHeight).observe(document.documentElement); } catch(e){}
+  }
+  // Periodic safety net (handles late-loading content like video frames)
+  var ticks = 0, t = setInterval(function(){ sendHeight(); if(++ticks > 30) clearInterval(t); }, 1000);
+
+  // Relay in-page anchor clicks to parent so it can smooth-scroll to the right position
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest ? e.target.closest('a[href^="#"]') : null;
+    if (!a) return;
+    var id = a.getAttribute('href').slice(1);
+    if (!id) return;
+    var el = document.getElementById(id);
+    if (!el) return;
+    e.preventDefault();
+    var rect = el.getBoundingClientRect();
+    var topInIframe = rect.top + window.pageYOffset;
+    try { window.parent.postMessage({ type: 'n20-iframe-scroll', topInIframe: topInIframe }, '*'); } catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
